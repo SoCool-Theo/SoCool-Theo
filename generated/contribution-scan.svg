@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="718" height="120" viewBox="0 0 718 120" role="img" aria-labelledby="title description">
-  <title id="title">Animated contribution scan preview</title>
-  <desc id="description">A glowing vertical line moves from left to right and reveals a sample GitHub contribution grid.</desc>
+  <title id="title">SoCool-Theo's animated contribution scan</title>
+  <desc id="description">A glowing vertical line moves from left to right and reveals 143 contributions from SoCool-Theo's latest GitHub contribution calendar.</desc>
 
   <defs>
     <style>
@@ -425,214 +425,50 @@
   </g>
 
   <g id="revealed-contributions" clip-path="url(#reveal-clip)" shape-rendering="geometricPrecision">
-      <rect class="level-2" x="16" y="29" width="10" height="10" rx="2" />
-      <rect class="level-1" x="16" y="55" width="10" height="10" rx="2" />
-      <rect class="level-2" x="16" y="68" width="10" height="10" rx="2" />
-      <rect class="level-3" x="29" y="16" width="10" height="10" rx="2" />
-      <rect class="level-2" x="29" y="68" width="10" height="10" rx="2" />
-      <rect class="level-1" x="29" y="81" width="10" height="10" rx="2" />
-      <rect class="level-1" x="29" y="94" width="10" height="10" rx="2" />
-      <rect class="level-2" x="42" y="29" width="10" height="10" rx="2" />
-      <rect class="level-2" x="42" y="42" width="10" height="10" rx="2" />
-      <rect class="level-2" x="42" y="55" width="10" height="10" rx="2" />
-      <rect class="level-1" x="42" y="68" width="10" height="10" rx="2" />
-      <rect class="level-3" x="42" y="94" width="10" height="10" rx="2" />
-      <rect class="level-1" x="55" y="16" width="10" height="10" rx="2" />
-      <rect class="level-2" x="55" y="29" width="10" height="10" rx="2" />
-      <rect class="level-1" x="55" y="68" width="10" height="10" rx="2" />
-      <rect class="level-4" x="55" y="81" width="10" height="10" rx="2" />
-      <rect class="level-1" x="68" y="16" width="10" height="10" rx="2" />
-      <rect class="level-2" x="68" y="29" width="10" height="10" rx="2" />
-      <rect class="level-1" x="68" y="42" width="10" height="10" rx="2" />
-      <rect class="level-3" x="68" y="81" width="10" height="10" rx="2" />
-      <rect class="level-3" x="68" y="94" width="10" height="10" rx="2" />
-      <rect class="level-3" x="81" y="16" width="10" height="10" rx="2" />
-      <rect class="level-1" x="81" y="29" width="10" height="10" rx="2" />
-      <rect class="level-4" x="81" y="42" width="10" height="10" rx="2" />
-      <rect class="level-1" x="81" y="68" width="10" height="10" rx="2" />
-      <rect class="level-1" x="94" y="16" width="10" height="10" rx="2" />
-      <rect class="level-1" x="94" y="55" width="10" height="10" rx="2" />
-      <rect class="level-3" x="94" y="81" width="10" height="10" rx="2" />
-      <rect class="level-1" x="94" y="94" width="10" height="10" rx="2" />
-      <rect class="level-1" x="107" y="29" width="10" height="10" rx="2" />
-      <rect class="level-1" x="107" y="55" width="10" height="10" rx="2" />
-      <rect class="level-1" x="107" y="94" width="10" height="10" rx="2" />
-      <rect class="level-2" x="120" y="29" width="10" height="10" rx="2" />
-      <rect class="level-1" x="120" y="55" width="10" height="10" rx="2" />
-      <rect class="level-1" x="133" y="16" width="10" height="10" rx="2" />
-      <rect class="level-1" x="133" y="42" width="10" height="10" rx="2" />
-      <rect class="level-4" x="133" y="55" width="10" height="10" rx="2" />
-      <rect class="level-2" x="133" y="68" width="10" height="10" rx="2" />
-      <rect class="level-1" x="133" y="81" width="10" height="10" rx="2" />
-      <rect class="level-2" x="146" y="55" width="10" height="10" rx="2" />
-      <rect class="level-1" x="146" y="68" width="10" height="10" rx="2" />
-      <rect class="level-1" x="146" y="81" width="10" height="10" rx="2" />
-      <rect class="level-3" x="146" y="94" width="10" height="10" rx="2" />
-      <rect class="level-3" x="159" y="16" width="10" height="10" rx="2" />
-      <rect class="level-3" x="159" y="29" width="10" height="10" rx="2" />
-      <rect class="level-1" x="159" y="81" width="10" height="10" rx="2" />
-      <rect class="level-1" x="159" y="94" width="10" height="10" rx="2" />
-      <rect class="level-3" x="172" y="16" width="10" height="10" rx="2" />
-      <rect class="level-1" x="172" y="29" width="10" height="10" rx="2" />
-      <rect class="level-1" x="172" y="68" width="10" height="10" rx="2" />
-      <rect class="level-3" x="172" y="81" width="10" height="10" rx="2" />
-      <rect class="level-1" x="172" y="94" width="10" height="10" rx="2" />
-      <rect class="level-1" x="185" y="16" width="10" height="10" rx="2" />
-      <rect class="level-1" x="185" y="29" width="10" height="10" rx="2" />
-      <rect class="level-2" x="185" y="42" width="10" height="10" rx="2" />
-      <rect class="level-2" x="185" y="68" width="10" height="10" rx="2" />
-      <rect class="level-2" x="185" y="81" width="10" height="10" rx="2" />
-      <rect class="level-3" x="198" y="42" width="10" height="10" rx="2" />
-      <rect class="level-2" x="198" y="55" width="10" height="10" rx="2" />
-      <rect class="level-1" x="211" y="16" width="10" height="10" rx="2" />
-      <rect class="level-2" x="211" y="29" width="10" height="10" rx="2" />
-      <rect class="level-2" x="211" y="42" width="10" height="10" rx="2" />
-      <rect class="level-1" x="211" y="55" width="10" height="10" rx="2" />
-      <rect class="level-3" x="211" y="68" width="10" height="10" rx="2" />
-      <rect class="level-1" x="211" y="81" width="10" height="10" rx="2" />
-      <rect class="level-1" x="211" y="94" width="10" height="10" rx="2" />
-      <rect class="level-1" x="224" y="81" width="10" height="10" rx="2" />
-      <rect class="level-1" x="237" y="16" width="10" height="10" rx="2" />
-      <rect class="level-2" x="237" y="42" width="10" height="10" rx="2" />
-      <rect class="level-2" x="237" y="81" width="10" height="10" rx="2" />
-      <rect class="level-2" x="250" y="16" width="10" height="10" rx="2" />
-      <rect class="level-2" x="250" y="68" width="10" height="10" rx="2" />
-      <rect class="level-3" x="250" y="94" width="10" height="10" rx="2" />
-      <rect class="level-1" x="263" y="16" width="10" height="10" rx="2" />
-      <rect class="level-2" x="263" y="42" width="10" height="10" rx="2" />
-      <rect class="level-2" x="263" y="55" width="10" height="10" rx="2" />
-      <rect class="level-2" x="263" y="68" width="10" height="10" rx="2" />
-      <rect class="level-2" x="263" y="81" width="10" height="10" rx="2" />
-      <rect class="level-1" x="263" y="94" width="10" height="10" rx="2" />
-      <rect class="level-3" x="276" y="29" width="10" height="10" rx="2" />
-      <rect class="level-2" x="276" y="42" width="10" height="10" rx="2" />
-      <rect class="level-1" x="289" y="42" width="10" height="10" rx="2" />
-      <rect class="level-4" x="289" y="55" width="10" height="10" rx="2" />
-      <rect class="level-1" x="289" y="68" width="10" height="10" rx="2" />
-      <rect class="level-1" x="289" y="81" width="10" height="10" rx="2" />
-      <rect class="level-3" x="302" y="29" width="10" height="10" rx="2" />
-      <rect class="level-1" x="302" y="81" width="10" height="10" rx="2" />
-      <rect class="level-2" x="302" y="94" width="10" height="10" rx="2" />
-      <rect class="level-4" x="315" y="42" width="10" height="10" rx="2" />
-      <rect class="level-1" x="315" y="55" width="10" height="10" rx="2" />
-      <rect class="level-1" x="315" y="81" width="10" height="10" rx="2" />
-      <rect class="level-2" x="315" y="94" width="10" height="10" rx="2" />
-      <rect class="level-2" x="328" y="29" width="10" height="10" rx="2" />
-      <rect class="level-1" x="328" y="42" width="10" height="10" rx="2" />
-      <rect class="level-3" x="328" y="55" width="10" height="10" rx="2" />
-      <rect class="level-3" x="328" y="68" width="10" height="10" rx="2" />
-      <rect class="level-1" x="328" y="81" width="10" height="10" rx="2" />
-      <rect class="level-1" x="328" y="94" width="10" height="10" rx="2" />
-      <rect class="level-1" x="341" y="42" width="10" height="10" rx="2" />
-      <rect class="level-1" x="341" y="55" width="10" height="10" rx="2" />
-      <rect class="level-4" x="341" y="68" width="10" height="10" rx="2" />
-      <rect class="level-2" x="341" y="81" width="10" height="10" rx="2" />
-      <rect class="level-1" x="354" y="29" width="10" height="10" rx="2" />
-      <rect class="level-3" x="354" y="42" width="10" height="10" rx="2" />
-      <rect class="level-2" x="354" y="81" width="10" height="10" rx="2" />
-      <rect class="level-1" x="354" y="94" width="10" height="10" rx="2" />
-      <rect class="level-2" x="367" y="42" width="10" height="10" rx="2" />
-      <rect class="level-2" x="367" y="55" width="10" height="10" rx="2" />
-      <rect class="level-1" x="367" y="94" width="10" height="10" rx="2" />
-      <rect class="level-3" x="380" y="29" width="10" height="10" rx="2" />
-      <rect class="level-1" x="380" y="55" width="10" height="10" rx="2" />
-      <rect class="level-4" x="380" y="81" width="10" height="10" rx="2" />
-      <rect class="level-1" x="393" y="68" width="10" height="10" rx="2" />
-      <rect class="level-2" x="393" y="81" width="10" height="10" rx="2" />
-      <rect class="level-1" x="406" y="16" width="10" height="10" rx="2" />
-      <rect class="level-1" x="406" y="55" width="10" height="10" rx="2" />
-      <rect class="level-3" x="406" y="68" width="10" height="10" rx="2" />
-      <rect class="level-1" x="406" y="81" width="10" height="10" rx="2" />
-      <rect class="level-2" x="419" y="94" width="10" height="10" rx="2" />
-      <rect class="level-1" x="432" y="42" width="10" height="10" rx="2" />
-      <rect class="level-1" x="432" y="68" width="10" height="10" rx="2" />
-      <rect class="level-1" x="432" y="81" width="10" height="10" rx="2" />
-      <rect class="level-2" x="432" y="94" width="10" height="10" rx="2" />
-      <rect class="level-3" x="445" y="29" width="10" height="10" rx="2" />
-      <rect class="level-4" x="445" y="42" width="10" height="10" rx="2" />
-      <rect class="level-4" x="445" y="81" width="10" height="10" rx="2" />
-      <rect class="level-2" x="458" y="16" width="10" height="10" rx="2" />
-      <rect class="level-1" x="458" y="29" width="10" height="10" rx="2" />
-      <rect class="level-1" x="458" y="42" width="10" height="10" rx="2" />
-      <rect class="level-4" x="458" y="68" width="10" height="10" rx="2" />
-      <rect class="level-2" x="458" y="81" width="10" height="10" rx="2" />
-      <rect class="level-1" x="458" y="94" width="10" height="10" rx="2" />
-      <rect class="level-4" x="471" y="16" width="10" height="10" rx="2" />
-      <rect class="level-1" x="471" y="81" width="10" height="10" rx="2" />
-      <rect class="level-1" x="484" y="16" width="10" height="10" rx="2" />
-      <rect class="level-3" x="484" y="29" width="10" height="10" rx="2" />
-      <rect class="level-1" x="484" y="42" width="10" height="10" rx="2" />
-      <rect class="level-1" x="484" y="55" width="10" height="10" rx="2" />
-      <rect class="level-4" x="484" y="68" width="10" height="10" rx="2" />
-      <rect class="level-1" x="484" y="81" width="10" height="10" rx="2" />
-      <rect class="level-2" x="484" y="94" width="10" height="10" rx="2" />
-      <rect class="level-1" x="497" y="16" width="10" height="10" rx="2" />
-      <rect class="level-3" x="497" y="42" width="10" height="10" rx="2" />
-      <rect class="level-3" x="497" y="68" width="10" height="10" rx="2" />
-      <rect class="level-1" x="497" y="81" width="10" height="10" rx="2" />
-      <rect class="level-2" x="497" y="94" width="10" height="10" rx="2" />
-      <rect class="level-2" x="510" y="16" width="10" height="10" rx="2" />
-      <rect class="level-1" x="510" y="29" width="10" height="10" rx="2" />
-      <rect class="level-1" x="510" y="55" width="10" height="10" rx="2" />
-      <rect class="level-1" x="510" y="94" width="10" height="10" rx="2" />
-      <rect class="level-2" x="523" y="55" width="10" height="10" rx="2" />
-      <rect class="level-4" x="523" y="68" width="10" height="10" rx="2" />
-      <rect class="level-4" x="523" y="81" width="10" height="10" rx="2" />
-      <rect class="level-2" x="523" y="94" width="10" height="10" rx="2" />
-      <rect class="level-2" x="536" y="29" width="10" height="10" rx="2" />
-      <rect class="level-1" x="536" y="42" width="10" height="10" rx="2" />
-      <rect class="level-2" x="536" y="68" width="10" height="10" rx="2" />
-      <rect class="level-1" x="536" y="81" width="10" height="10" rx="2" />
-      <rect class="level-2" x="536" y="94" width="10" height="10" rx="2" />
-      <rect class="level-1" x="549" y="16" width="10" height="10" rx="2" />
-      <rect class="level-2" x="549" y="42" width="10" height="10" rx="2" />
-      <rect class="level-4" x="549" y="81" width="10" height="10" rx="2" />
-      <rect class="level-2" x="549" y="94" width="10" height="10" rx="2" />
-      <rect class="level-2" x="562" y="16" width="10" height="10" rx="2" />
-      <rect class="level-2" x="562" y="42" width="10" height="10" rx="2" />
-      <rect class="level-3" x="562" y="55" width="10" height="10" rx="2" />
-      <rect class="level-2" x="562" y="81" width="10" height="10" rx="2" />
-      <rect class="level-1" x="562" y="94" width="10" height="10" rx="2" />
-      <rect class="level-2" x="575" y="16" width="10" height="10" rx="2" />
-      <rect class="level-1" x="575" y="29" width="10" height="10" rx="2" />
-      <rect class="level-1" x="575" y="55" width="10" height="10" rx="2" />
-      <rect class="level-2" x="575" y="81" width="10" height="10" rx="2" />
-      <rect class="level-2" x="588" y="29" width="10" height="10" rx="2" />
-      <rect class="level-2" x="588" y="55" width="10" height="10" rx="2" />
-      <rect class="level-2" x="601" y="16" width="10" height="10" rx="2" />
-      <rect class="level-1" x="601" y="29" width="10" height="10" rx="2" />
-      <rect class="level-4" x="601" y="55" width="10" height="10" rx="2" />
-      <rect class="level-1" x="601" y="68" width="10" height="10" rx="2" />
-      <rect class="level-1" x="614" y="16" width="10" height="10" rx="2" />
-      <rect class="level-1" x="614" y="42" width="10" height="10" rx="2" />
-      <rect class="level-2" x="614" y="81" width="10" height="10" rx="2" />
-      <rect class="level-3" x="614" y="94" width="10" height="10" rx="2" />
-      <rect class="level-1" x="627" y="29" width="10" height="10" rx="2" />
-      <rect class="level-4" x="627" y="42" width="10" height="10" rx="2" />
-      <rect class="level-2" x="627" y="94" width="10" height="10" rx="2" />
-      <rect class="level-2" x="640" y="16" width="10" height="10" rx="2" />
-      <rect class="level-3" x="640" y="42" width="10" height="10" rx="2" />
-      <rect class="level-2" x="640" y="68" width="10" height="10" rx="2" />
-      <rect class="level-1" x="640" y="94" width="10" height="10" rx="2" />
-      <rect class="level-1" x="653" y="29" width="10" height="10" rx="2" />
-      <rect class="level-1" x="653" y="55" width="10" height="10" rx="2" />
-      <rect class="level-2" x="653" y="81" width="10" height="10" rx="2" />
-      <rect class="level-2" x="666" y="16" width="10" height="10" rx="2" />
-      <rect class="level-1" x="666" y="55" width="10" height="10" rx="2" />
-      <rect class="level-2" x="666" y="81" width="10" height="10" rx="2" />
-      <rect class="level-3" x="666" y="94" width="10" height="10" rx="2" />
-      <rect class="level-4" x="679" y="16" width="10" height="10" rx="2" />
-      <rect class="level-1" x="679" y="29" width="10" height="10" rx="2" />
-      <rect class="level-1" x="679" y="42" width="10" height="10" rx="2" />
-      <rect class="level-2" x="679" y="55" width="10" height="10" rx="2" />
-      <rect class="level-2" x="679" y="81" width="10" height="10" rx="2" />
-      <rect class="level-3" x="679" y="94" width="10" height="10" rx="2" />
-      <rect class="level-3" x="692" y="16" width="10" height="10" rx="2" />
-      <rect class="level-3" x="692" y="29" width="10" height="10" rx="2" />
-      <rect class="level-1" x="692" y="42" width="10" height="10" rx="2" />
-      <rect class="level-1" x="692" y="55" width="10" height="10" rx="2" />
-      <rect class="level-2" x="692" y="68" width="10" height="10" rx="2" />
-      <rect class="level-4" x="692" y="81" width="10" height="10" rx="2" />
+      <rect class="level-2" x="354" y="29" width="10" height="10" rx="2"><title>2026-01-26: 3 contributions</title></rect>
+      <rect class="level-3" x="354" y="81" width="10" height="10" rx="2"><title>2026-01-30: 6 contributions</title></rect>
+      <rect class="level-1" x="354" y="94" width="10" height="10" rx="2"><title>2026-01-31: 1 contribution</title></rect>
+      <rect class="level-1" x="367" y="16" width="10" height="10" rx="2"><title>2026-02-01: 2 contributions</title></rect>
+      <rect class="level-1" x="367" y="29" width="10" height="10" rx="2"><title>2026-02-02: 2 contributions</title></rect>
+      <rect class="level-1" x="367" y="55" width="10" height="10" rx="2"><title>2026-02-04: 1 contribution</title></rect>
+      <rect class="level-1" x="367" y="68" width="10" height="10" rx="2"><title>2026-02-05: 1 contribution</title></rect>
+      <rect class="level-1" x="367" y="81" width="10" height="10" rx="2"><title>2026-02-06: 1 contribution</title></rect>
+      <rect class="level-1" x="380" y="68" width="10" height="10" rx="2"><title>2026-02-12: 1 contribution</title></rect>
+      <rect class="level-2" x="393" y="68" width="10" height="10" rx="2"><title>2026-02-19: 5 contributions</title></rect>
+      <rect class="level-2" x="393" y="81" width="10" height="10" rx="2"><title>2026-02-20: 5 contributions</title></rect>
+      <rect class="level-2" x="393" y="94" width="10" height="10" rx="2"><title>2026-02-21: 4 contributions</title></rect>
+      <rect class="level-1" x="406" y="29" width="10" height="10" rx="2"><title>2026-02-23: 1 contribution</title></rect>
+      <rect class="level-2" x="406" y="42" width="10" height="10" rx="2"><title>2026-02-24: 4 contributions</title></rect>
+      <rect class="level-2" x="406" y="55" width="10" height="10" rx="2"><title>2026-02-25: 4 contributions</title></rect>
+      <rect class="level-2" x="406" y="68" width="10" height="10" rx="2"><title>2026-02-26: 4 contributions</title></rect>
+      <rect class="level-1" x="419" y="42" width="10" height="10" rx="2"><title>2026-03-03: 2 contributions</title></rect>
+      <rect class="level-1" x="445" y="81" width="10" height="10" rx="2"><title>2026-03-20: 2 contributions</title></rect>
+      <rect class="level-1" x="445" y="94" width="10" height="10" rx="2"><title>2026-03-21: 1 contribution</title></rect>
+      <rect class="level-1" x="458" y="55" width="10" height="10" rx="2"><title>2026-03-25: 1 contribution</title></rect>
+      <rect class="level-1" x="458" y="68" width="10" height="10" rx="2"><title>2026-03-26: 1 contribution</title></rect>
+      <rect class="level-1" x="458" y="81" width="10" height="10" rx="2"><title>2026-03-27: 1 contribution</title></rect>
+      <rect class="level-1" x="458" y="94" width="10" height="10" rx="2"><title>2026-03-28: 1 contribution</title></rect>
+      <rect class="level-2" x="471" y="16" width="10" height="10" rx="2"><title>2026-03-29: 5 contributions</title></rect>
+      <rect class="level-4" x="471" y="42" width="10" height="10" rx="2"><title>2026-03-31: 8 contributions</title></rect>
+      <rect class="level-2" x="471" y="68" width="10" height="10" rx="2"><title>2026-04-02: 5 contributions</title></rect>
+      <rect class="level-1" x="601" y="81" width="10" height="10" rx="2"><title>2026-06-12: 1 contribution</title></rect>
+      <rect class="level-1" x="601" y="94" width="10" height="10" rx="2"><title>2026-06-13: 2 contributions</title></rect>
+      <rect class="level-1" x="627" y="29" width="10" height="10" rx="2"><title>2026-06-22: 1 contribution</title></rect>
+      <rect class="level-4" x="653" y="42" width="10" height="10" rx="2"><title>2026-07-07: 8 contributions</title></rect>
+      <rect class="level-4" x="653" y="81" width="10" height="10" rx="2"><title>2026-07-10: 10 contributions</title></rect>
+      <rect class="level-2" x="653" y="94" width="10" height="10" rx="2"><title>2026-07-11: 3 contributions</title></rect>
+      <rect class="level-2" x="666" y="16" width="10" height="10" rx="2"><title>2026-07-12: 5 contributions</title></rect>
+      <rect class="level-1" x="666" y="42" width="10" height="10" rx="2"><title>2026-07-14: 2 contributions</title></rect>
+      <rect class="level-4" x="666" y="55" width="10" height="10" rx="2"><title>2026-07-15: 8 contributions</title></rect>
+      <rect class="level-1" x="666" y="94" width="10" height="10" rx="2"><title>2026-07-18: 2 contributions</title></rect>
+      <rect class="level-3" x="679" y="68" width="10" height="10" rx="2"><title>2026-07-23: 6 contributions</title></rect>
+      <rect class="level-3" x="679" y="81" width="10" height="10" rx="2"><title>2026-07-24: 6 contributions</title></rect>
+      <rect class="level-2" x="692" y="16" width="10" height="10" rx="2"><title>2026-07-26: 5 contributions</title></rect>
+      <rect class="level-1" x="692" y="42" width="10" height="10" rx="2"><title>2026-07-28: 2 contributions</title></rect>
+      <rect class="level-2" x="692" y="55" width="10" height="10" rx="2"><title>2026-07-29: 3 contributions</title></rect>
+      <rect class="level-2" x="692" y="68" width="10" height="10" rx="2"><title>2026-07-30: 4 contributions</title></rect>
+      <rect class="level-1" x="692" y="81" width="10" height="10" rx="2"><title>2026-07-31: 1 contribution</title></rect>
+      <rect class="level-1" x="692" y="94" width="10" height="10" rx="2"><title>2026-08-01: 2 contributions</title></rect>
     <animate
       attributeName="opacity"
       values="1;1;1;0"
