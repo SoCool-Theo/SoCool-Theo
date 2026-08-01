@@ -1,0 +1,664 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="718" height="120" viewBox="0 0 718 120" role="img" aria-labelledby="title description">
+  <title id="title">Animated contribution scan preview</title>
+  <desc id="description">A glowing vertical line moves from left to right and reveals a sample GitHub contribution grid.</desc>
+
+  <defs>
+    <style>
+      .base-cell { fill: #ebedf0; stroke: #d0d7de; stroke-width: 0.5; }
+      .level-1 { fill: #9be9a8; }
+      .level-2 { fill: #40c463; }
+      .level-3 { fill: #30a14e; }
+      .level-4 { fill: #216e39; }
+      .scanner-line { stroke: #1f883d; }
+      .scanner-stop { stop-color: #2da44e; }
+
+      @media (prefers-color-scheme: dark) {
+        .base-cell { fill: #161b22; stroke: #30363d; }
+        .level-1 { fill: #0e4429; }
+        .level-2 { fill: #006d32; }
+        .level-3 { fill: #26a641; }
+        .level-4 { fill: #39d353; }
+        .scanner-line { stroke: #7ee787; }
+        .scanner-stop { stop-color: #39d353; }
+      }
+    </style>
+
+    <linearGradient id="scanner-beam" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop class="scanner-stop" offset="0%" stop-opacity="0" />
+      <stop class="scanner-stop" offset="50%" stop-opacity="0.65" />
+      <stop class="scanner-stop" offset="100%" stop-opacity="0" />
+    </linearGradient>
+
+    <filter id="scanner-glow" x="-200%" y="-30%" width="400%" height="160%">
+      <feGaussianBlur stdDeviation="2.4" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <clipPath id="reveal-clip">
+      <rect x="16" y="16" width="0" height="88">
+        <animate
+          attributeName="width"
+          values="0;0;686;686;0"
+          keyTimes="0;0.063636;0.281818;0.909091;1"
+          dur="5.5s"
+          repeatCount="indefinite"
+        />
+      </rect>
+    </clipPath>
+  </defs>
+
+  <g id="base-grid" shape-rendering="geometricPrecision">
+    <rect class="base-cell" x="16" y="16" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="16" y="29" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="16" y="42" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="16" y="55" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="16" y="68" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="16" y="81" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="16" y="94" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="29" y="16" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="29" y="29" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="29" y="42" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="29" y="55" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="29" y="68" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="29" y="81" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="29" y="94" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="42" y="16" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="42" y="29" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="42" y="42" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="42" y="55" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="42" y="68" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="42" y="81" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="42" y="94" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="55" y="16" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="55" y="29" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="55" y="42" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="55" y="55" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="55" y="68" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="55" y="81" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="55" y="94" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="68" y="16" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="68" y="29" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="68" y="42" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="68" y="55" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="68" y="68" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="68" y="81" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="68" y="94" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="81" y="16" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="81" y="29" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="81" y="42" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="81" y="55" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="81" y="68" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="81" y="81" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="81" y="94" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="94" y="16" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="94" y="29" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="94" y="42" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="94" y="55" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="94" y="68" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="94" y="81" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="94" y="94" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="107" y="16" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="107" y="29" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="107" y="42" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="107" y="55" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="107" y="68" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="107" y="81" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="107" y="94" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="120" y="16" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="120" y="29" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="120" y="42" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="120" y="55" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="120" y="68" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="120" y="81" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="120" y="94" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="133" y="16" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="133" y="29" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="133" y="42" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="133" y="55" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="133" y="68" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="133" y="81" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="133" y="94" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="146" y="16" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="146" y="29" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="146" y="42" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="146" y="55" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="146" y="68" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="146" y="81" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="146" y="94" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="159" y="16" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="159" y="29" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="159" y="42" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="159" y="55" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="159" y="68" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="159" y="81" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="159" y="94" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="172" y="16" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="172" y="29" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="172" y="42" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="172" y="55" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="172" y="68" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="172" y="81" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="172" y="94" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="185" y="16" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="185" y="29" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="185" y="42" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="185" y="55" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="185" y="68" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="185" y="81" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="185" y="94" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="198" y="16" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="198" y="29" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="198" y="42" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="198" y="55" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="198" y="68" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="198" y="81" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="198" y="94" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="211" y="16" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="211" y="29" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="211" y="42" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="211" y="55" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="211" y="68" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="211" y="81" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="211" y="94" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="224" y="16" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="224" y="29" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="224" y="42" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="224" y="55" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="224" y="68" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="224" y="81" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="224" y="94" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="237" y="16" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="237" y="29" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="237" y="42" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="237" y="55" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="237" y="68" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="237" y="81" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="237" y="94" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="250" y="16" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="250" y="29" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="250" y="42" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="250" y="55" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="250" y="68" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="250" y="81" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="250" y="94" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="263" y="16" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="263" y="29" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="263" y="42" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="263" y="55" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="263" y="68" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="263" y="81" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="263" y="94" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="276" y="16" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="276" y="29" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="276" y="42" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="276" y="55" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="276" y="68" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="276" y="81" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="276" y="94" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="289" y="16" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="289" y="29" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="289" y="42" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="289" y="55" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="289" y="68" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="289" y="81" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="289" y="94" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="302" y="16" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="302" y="29" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="302" y="42" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="302" y="55" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="302" y="68" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="302" y="81" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="302" y="94" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="315" y="16" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="315" y="29" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="315" y="42" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="315" y="55" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="315" y="68" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="315" y="81" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="315" y="94" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="328" y="16" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="328" y="29" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="328" y="42" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="328" y="55" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="328" y="68" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="328" y="81" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="328" y="94" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="341" y="16" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="341" y="29" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="341" y="42" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="341" y="55" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="341" y="68" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="341" y="81" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="341" y="94" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="354" y="16" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="354" y="29" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="354" y="42" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="354" y="55" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="354" y="68" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="354" y="81" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="354" y="94" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="367" y="16" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="367" y="29" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="367" y="42" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="367" y="55" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="367" y="68" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="367" y="81" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="367" y="94" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="380" y="16" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="380" y="29" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="380" y="42" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="380" y="55" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="380" y="68" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="380" y="81" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="380" y="94" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="393" y="16" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="393" y="29" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="393" y="42" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="393" y="55" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="393" y="68" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="393" y="81" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="393" y="94" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="406" y="16" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="406" y="29" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="406" y="42" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="406" y="55" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="406" y="68" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="406" y="81" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="406" y="94" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="419" y="16" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="419" y="29" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="419" y="42" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="419" y="55" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="419" y="68" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="419" y="81" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="419" y="94" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="432" y="16" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="432" y="29" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="432" y="42" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="432" y="55" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="432" y="68" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="432" y="81" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="432" y="94" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="445" y="16" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="445" y="29" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="445" y="42" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="445" y="55" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="445" y="68" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="445" y="81" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="445" y="94" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="458" y="16" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="458" y="29" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="458" y="42" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="458" y="55" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="458" y="68" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="458" y="81" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="458" y="94" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="471" y="16" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="471" y="29" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="471" y="42" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="471" y="55" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="471" y="68" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="471" y="81" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="471" y="94" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="484" y="16" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="484" y="29" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="484" y="42" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="484" y="55" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="484" y="68" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="484" y="81" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="484" y="94" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="497" y="16" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="497" y="29" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="497" y="42" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="497" y="55" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="497" y="68" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="497" y="81" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="497" y="94" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="510" y="16" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="510" y="29" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="510" y="42" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="510" y="55" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="510" y="68" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="510" y="81" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="510" y="94" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="523" y="16" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="523" y="29" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="523" y="42" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="523" y="55" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="523" y="68" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="523" y="81" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="523" y="94" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="536" y="16" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="536" y="29" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="536" y="42" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="536" y="55" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="536" y="68" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="536" y="81" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="536" y="94" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="549" y="16" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="549" y="29" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="549" y="42" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="549" y="55" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="549" y="68" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="549" y="81" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="549" y="94" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="562" y="16" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="562" y="29" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="562" y="42" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="562" y="55" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="562" y="68" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="562" y="81" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="562" y="94" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="575" y="16" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="575" y="29" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="575" y="42" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="575" y="55" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="575" y="68" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="575" y="81" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="575" y="94" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="588" y="16" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="588" y="29" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="588" y="42" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="588" y="55" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="588" y="68" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="588" y="81" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="588" y="94" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="601" y="16" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="601" y="29" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="601" y="42" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="601" y="55" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="601" y="68" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="601" y="81" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="601" y="94" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="614" y="16" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="614" y="29" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="614" y="42" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="614" y="55" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="614" y="68" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="614" y="81" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="614" y="94" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="627" y="16" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="627" y="29" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="627" y="42" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="627" y="55" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="627" y="68" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="627" y="81" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="627" y="94" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="640" y="16" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="640" y="29" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="640" y="42" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="640" y="55" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="640" y="68" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="640" y="81" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="640" y="94" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="653" y="16" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="653" y="29" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="653" y="42" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="653" y="55" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="653" y="68" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="653" y="81" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="653" y="94" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="666" y="16" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="666" y="29" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="666" y="42" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="666" y="55" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="666" y="68" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="666" y="81" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="666" y="94" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="679" y="16" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="679" y="29" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="679" y="42" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="679" y="55" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="679" y="68" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="679" y="81" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="679" y="94" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="692" y="16" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="692" y="29" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="692" y="42" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="692" y="55" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="692" y="68" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="692" y="81" width="10" height="10" rx="2" />
+    <rect class="base-cell" x="692" y="94" width="10" height="10" rx="2" />
+  </g>
+
+  <g id="revealed-contributions" clip-path="url(#reveal-clip)" shape-rendering="geometricPrecision">
+      <rect class="level-2" x="16" y="29" width="10" height="10" rx="2" />
+      <rect class="level-1" x="16" y="55" width="10" height="10" rx="2" />
+      <rect class="level-2" x="16" y="68" width="10" height="10" rx="2" />
+      <rect class="level-3" x="29" y="16" width="10" height="10" rx="2" />
+      <rect class="level-2" x="29" y="68" width="10" height="10" rx="2" />
+      <rect class="level-1" x="29" y="81" width="10" height="10" rx="2" />
+      <rect class="level-1" x="29" y="94" width="10" height="10" rx="2" />
+      <rect class="level-2" x="42" y="29" width="10" height="10" rx="2" />
+      <rect class="level-2" x="42" y="42" width="10" height="10" rx="2" />
+      <rect class="level-2" x="42" y="55" width="10" height="10" rx="2" />
+      <rect class="level-1" x="42" y="68" width="10" height="10" rx="2" />
+      <rect class="level-3" x="42" y="94" width="10" height="10" rx="2" />
+      <rect class="level-1" x="55" y="16" width="10" height="10" rx="2" />
+      <rect class="level-2" x="55" y="29" width="10" height="10" rx="2" />
+      <rect class="level-1" x="55" y="68" width="10" height="10" rx="2" />
+      <rect class="level-4" x="55" y="81" width="10" height="10" rx="2" />
+      <rect class="level-1" x="68" y="16" width="10" height="10" rx="2" />
+      <rect class="level-2" x="68" y="29" width="10" height="10" rx="2" />
+      <rect class="level-1" x="68" y="42" width="10" height="10" rx="2" />
+      <rect class="level-3" x="68" y="81" width="10" height="10" rx="2" />
+      <rect class="level-3" x="68" y="94" width="10" height="10" rx="2" />
+      <rect class="level-3" x="81" y="16" width="10" height="10" rx="2" />
+      <rect class="level-1" x="81" y="29" width="10" height="10" rx="2" />
+      <rect class="level-4" x="81" y="42" width="10" height="10" rx="2" />
+      <rect class="level-1" x="81" y="68" width="10" height="10" rx="2" />
+      <rect class="level-1" x="94" y="16" width="10" height="10" rx="2" />
+      <rect class="level-1" x="94" y="55" width="10" height="10" rx="2" />
+      <rect class="level-3" x="94" y="81" width="10" height="10" rx="2" />
+      <rect class="level-1" x="94" y="94" width="10" height="10" rx="2" />
+      <rect class="level-1" x="107" y="29" width="10" height="10" rx="2" />
+      <rect class="level-1" x="107" y="55" width="10" height="10" rx="2" />
+      <rect class="level-1" x="107" y="94" width="10" height="10" rx="2" />
+      <rect class="level-2" x="120" y="29" width="10" height="10" rx="2" />
+      <rect class="level-1" x="120" y="55" width="10" height="10" rx="2" />
+      <rect class="level-1" x="133" y="16" width="10" height="10" rx="2" />
+      <rect class="level-1" x="133" y="42" width="10" height="10" rx="2" />
+      <rect class="level-4" x="133" y="55" width="10" height="10" rx="2" />
+      <rect class="level-2" x="133" y="68" width="10" height="10" rx="2" />
+      <rect class="level-1" x="133" y="81" width="10" height="10" rx="2" />
+      <rect class="level-2" x="146" y="55" width="10" height="10" rx="2" />
+      <rect class="level-1" x="146" y="68" width="10" height="10" rx="2" />
+      <rect class="level-1" x="146" y="81" width="10" height="10" rx="2" />
+      <rect class="level-3" x="146" y="94" width="10" height="10" rx="2" />
+      <rect class="level-3" x="159" y="16" width="10" height="10" rx="2" />
+      <rect class="level-3" x="159" y="29" width="10" height="10" rx="2" />
+      <rect class="level-1" x="159" y="81" width="10" height="10" rx="2" />
+      <rect class="level-1" x="159" y="94" width="10" height="10" rx="2" />
+      <rect class="level-3" x="172" y="16" width="10" height="10" rx="2" />
+      <rect class="level-1" x="172" y="29" width="10" height="10" rx="2" />
+      <rect class="level-1" x="172" y="68" width="10" height="10" rx="2" />
+      <rect class="level-3" x="172" y="81" width="10" height="10" rx="2" />
+      <rect class="level-1" x="172" y="94" width="10" height="10" rx="2" />
+      <rect class="level-1" x="185" y="16" width="10" height="10" rx="2" />
+      <rect class="level-1" x="185" y="29" width="10" height="10" rx="2" />
+      <rect class="level-2" x="185" y="42" width="10" height="10" rx="2" />
+      <rect class="level-2" x="185" y="68" width="10" height="10" rx="2" />
+      <rect class="level-2" x="185" y="81" width="10" height="10" rx="2" />
+      <rect class="level-3" x="198" y="42" width="10" height="10" rx="2" />
+      <rect class="level-2" x="198" y="55" width="10" height="10" rx="2" />
+      <rect class="level-1" x="211" y="16" width="10" height="10" rx="2" />
+      <rect class="level-2" x="211" y="29" width="10" height="10" rx="2" />
+      <rect class="level-2" x="211" y="42" width="10" height="10" rx="2" />
+      <rect class="level-1" x="211" y="55" width="10" height="10" rx="2" />
+      <rect class="level-3" x="211" y="68" width="10" height="10" rx="2" />
+      <rect class="level-1" x="211" y="81" width="10" height="10" rx="2" />
+      <rect class="level-1" x="211" y="94" width="10" height="10" rx="2" />
+      <rect class="level-1" x="224" y="81" width="10" height="10" rx="2" />
+      <rect class="level-1" x="237" y="16" width="10" height="10" rx="2" />
+      <rect class="level-2" x="237" y="42" width="10" height="10" rx="2" />
+      <rect class="level-2" x="237" y="81" width="10" height="10" rx="2" />
+      <rect class="level-2" x="250" y="16" width="10" height="10" rx="2" />
+      <rect class="level-2" x="250" y="68" width="10" height="10" rx="2" />
+      <rect class="level-3" x="250" y="94" width="10" height="10" rx="2" />
+      <rect class="level-1" x="263" y="16" width="10" height="10" rx="2" />
+      <rect class="level-2" x="263" y="42" width="10" height="10" rx="2" />
+      <rect class="level-2" x="263" y="55" width="10" height="10" rx="2" />
+      <rect class="level-2" x="263" y="68" width="10" height="10" rx="2" />
+      <rect class="level-2" x="263" y="81" width="10" height="10" rx="2" />
+      <rect class="level-1" x="263" y="94" width="10" height="10" rx="2" />
+      <rect class="level-3" x="276" y="29" width="10" height="10" rx="2" />
+      <rect class="level-2" x="276" y="42" width="10" height="10" rx="2" />
+      <rect class="level-1" x="289" y="42" width="10" height="10" rx="2" />
+      <rect class="level-4" x="289" y="55" width="10" height="10" rx="2" />
+      <rect class="level-1" x="289" y="68" width="10" height="10" rx="2" />
+      <rect class="level-1" x="289" y="81" width="10" height="10" rx="2" />
+      <rect class="level-3" x="302" y="29" width="10" height="10" rx="2" />
+      <rect class="level-1" x="302" y="81" width="10" height="10" rx="2" />
+      <rect class="level-2" x="302" y="94" width="10" height="10" rx="2" />
+      <rect class="level-4" x="315" y="42" width="10" height="10" rx="2" />
+      <rect class="level-1" x="315" y="55" width="10" height="10" rx="2" />
+      <rect class="level-1" x="315" y="81" width="10" height="10" rx="2" />
+      <rect class="level-2" x="315" y="94" width="10" height="10" rx="2" />
+      <rect class="level-2" x="328" y="29" width="10" height="10" rx="2" />
+      <rect class="level-1" x="328" y="42" width="10" height="10" rx="2" />
+      <rect class="level-3" x="328" y="55" width="10" height="10" rx="2" />
+      <rect class="level-3" x="328" y="68" width="10" height="10" rx="2" />
+      <rect class="level-1" x="328" y="81" width="10" height="10" rx="2" />
+      <rect class="level-1" x="328" y="94" width="10" height="10" rx="2" />
+      <rect class="level-1" x="341" y="42" width="10" height="10" rx="2" />
+      <rect class="level-1" x="341" y="55" width="10" height="10" rx="2" />
+      <rect class="level-4" x="341" y="68" width="10" height="10" rx="2" />
+      <rect class="level-2" x="341" y="81" width="10" height="10" rx="2" />
+      <rect class="level-1" x="354" y="29" width="10" height="10" rx="2" />
+      <rect class="level-3" x="354" y="42" width="10" height="10" rx="2" />
+      <rect class="level-2" x="354" y="81" width="10" height="10" rx="2" />
+      <rect class="level-1" x="354" y="94" width="10" height="10" rx="2" />
+      <rect class="level-2" x="367" y="42" width="10" height="10" rx="2" />
+      <rect class="level-2" x="367" y="55" width="10" height="10" rx="2" />
+      <rect class="level-1" x="367" y="94" width="10" height="10" rx="2" />
+      <rect class="level-3" x="380" y="29" width="10" height="10" rx="2" />
+      <rect class="level-1" x="380" y="55" width="10" height="10" rx="2" />
+      <rect class="level-4" x="380" y="81" width="10" height="10" rx="2" />
+      <rect class="level-1" x="393" y="68" width="10" height="10" rx="2" />
+      <rect class="level-2" x="393" y="81" width="10" height="10" rx="2" />
+      <rect class="level-1" x="406" y="16" width="10" height="10" rx="2" />
+      <rect class="level-1" x="406" y="55" width="10" height="10" rx="2" />
+      <rect class="level-3" x="406" y="68" width="10" height="10" rx="2" />
+      <rect class="level-1" x="406" y="81" width="10" height="10" rx="2" />
+      <rect class="level-2" x="419" y="94" width="10" height="10" rx="2" />
+      <rect class="level-1" x="432" y="42" width="10" height="10" rx="2" />
+      <rect class="level-1" x="432" y="68" width="10" height="10" rx="2" />
+      <rect class="level-1" x="432" y="81" width="10" height="10" rx="2" />
+      <rect class="level-2" x="432" y="94" width="10" height="10" rx="2" />
+      <rect class="level-3" x="445" y="29" width="10" height="10" rx="2" />
+      <rect class="level-4" x="445" y="42" width="10" height="10" rx="2" />
+      <rect class="level-4" x="445" y="81" width="10" height="10" rx="2" />
+      <rect class="level-2" x="458" y="16" width="10" height="10" rx="2" />
+      <rect class="level-1" x="458" y="29" width="10" height="10" rx="2" />
+      <rect class="level-1" x="458" y="42" width="10" height="10" rx="2" />
+      <rect class="level-4" x="458" y="68" width="10" height="10" rx="2" />
+      <rect class="level-2" x="458" y="81" width="10" height="10" rx="2" />
+      <rect class="level-1" x="458" y="94" width="10" height="10" rx="2" />
+      <rect class="level-4" x="471" y="16" width="10" height="10" rx="2" />
+      <rect class="level-1" x="471" y="81" width="10" height="10" rx="2" />
+      <rect class="level-1" x="484" y="16" width="10" height="10" rx="2" />
+      <rect class="level-3" x="484" y="29" width="10" height="10" rx="2" />
+      <rect class="level-1" x="484" y="42" width="10" height="10" rx="2" />
+      <rect class="level-1" x="484" y="55" width="10" height="10" rx="2" />
+      <rect class="level-4" x="484" y="68" width="10" height="10" rx="2" />
+      <rect class="level-1" x="484" y="81" width="10" height="10" rx="2" />
+      <rect class="level-2" x="484" y="94" width="10" height="10" rx="2" />
+      <rect class="level-1" x="497" y="16" width="10" height="10" rx="2" />
+      <rect class="level-3" x="497" y="42" width="10" height="10" rx="2" />
+      <rect class="level-3" x="497" y="68" width="10" height="10" rx="2" />
+      <rect class="level-1" x="497" y="81" width="10" height="10" rx="2" />
+      <rect class="level-2" x="497" y="94" width="10" height="10" rx="2" />
+      <rect class="level-2" x="510" y="16" width="10" height="10" rx="2" />
+      <rect class="level-1" x="510" y="29" width="10" height="10" rx="2" />
+      <rect class="level-1" x="510" y="55" width="10" height="10" rx="2" />
+      <rect class="level-1" x="510" y="94" width="10" height="10" rx="2" />
+      <rect class="level-2" x="523" y="55" width="10" height="10" rx="2" />
+      <rect class="level-4" x="523" y="68" width="10" height="10" rx="2" />
+      <rect class="level-4" x="523" y="81" width="10" height="10" rx="2" />
+      <rect class="level-2" x="523" y="94" width="10" height="10" rx="2" />
+      <rect class="level-2" x="536" y="29" width="10" height="10" rx="2" />
+      <rect class="level-1" x="536" y="42" width="10" height="10" rx="2" />
+      <rect class="level-2" x="536" y="68" width="10" height="10" rx="2" />
+      <rect class="level-1" x="536" y="81" width="10" height="10" rx="2" />
+      <rect class="level-2" x="536" y="94" width="10" height="10" rx="2" />
+      <rect class="level-1" x="549" y="16" width="10" height="10" rx="2" />
+      <rect class="level-2" x="549" y="42" width="10" height="10" rx="2" />
+      <rect class="level-4" x="549" y="81" width="10" height="10" rx="2" />
+      <rect class="level-2" x="549" y="94" width="10" height="10" rx="2" />
+      <rect class="level-2" x="562" y="16" width="10" height="10" rx="2" />
+      <rect class="level-2" x="562" y="42" width="10" height="10" rx="2" />
+      <rect class="level-3" x="562" y="55" width="10" height="10" rx="2" />
+      <rect class="level-2" x="562" y="81" width="10" height="10" rx="2" />
+      <rect class="level-1" x="562" y="94" width="10" height="10" rx="2" />
+      <rect class="level-2" x="575" y="16" width="10" height="10" rx="2" />
+      <rect class="level-1" x="575" y="29" width="10" height="10" rx="2" />
+      <rect class="level-1" x="575" y="55" width="10" height="10" rx="2" />
+      <rect class="level-2" x="575" y="81" width="10" height="10" rx="2" />
+      <rect class="level-2" x="588" y="29" width="10" height="10" rx="2" />
+      <rect class="level-2" x="588" y="55" width="10" height="10" rx="2" />
+      <rect class="level-2" x="601" y="16" width="10" height="10" rx="2" />
+      <rect class="level-1" x="601" y="29" width="10" height="10" rx="2" />
+      <rect class="level-4" x="601" y="55" width="10" height="10" rx="2" />
+      <rect class="level-1" x="601" y="68" width="10" height="10" rx="2" />
+      <rect class="level-1" x="614" y="16" width="10" height="10" rx="2" />
+      <rect class="level-1" x="614" y="42" width="10" height="10" rx="2" />
+      <rect class="level-2" x="614" y="81" width="10" height="10" rx="2" />
+      <rect class="level-3" x="614" y="94" width="10" height="10" rx="2" />
+      <rect class="level-1" x="627" y="29" width="10" height="10" rx="2" />
+      <rect class="level-4" x="627" y="42" width="10" height="10" rx="2" />
+      <rect class="level-2" x="627" y="94" width="10" height="10" rx="2" />
+      <rect class="level-2" x="640" y="16" width="10" height="10" rx="2" />
+      <rect class="level-3" x="640" y="42" width="10" height="10" rx="2" />
+      <rect class="level-2" x="640" y="68" width="10" height="10" rx="2" />
+      <rect class="level-1" x="640" y="94" width="10" height="10" rx="2" />
+      <rect class="level-1" x="653" y="29" width="10" height="10" rx="2" />
+      <rect class="level-1" x="653" y="55" width="10" height="10" rx="2" />
+      <rect class="level-2" x="653" y="81" width="10" height="10" rx="2" />
+      <rect class="level-2" x="666" y="16" width="10" height="10" rx="2" />
+      <rect class="level-1" x="666" y="55" width="10" height="10" rx="2" />
+      <rect class="level-2" x="666" y="81" width="10" height="10" rx="2" />
+      <rect class="level-3" x="666" y="94" width="10" height="10" rx="2" />
+      <rect class="level-4" x="679" y="16" width="10" height="10" rx="2" />
+      <rect class="level-1" x="679" y="29" width="10" height="10" rx="2" />
+      <rect class="level-1" x="679" y="42" width="10" height="10" rx="2" />
+      <rect class="level-2" x="679" y="55" width="10" height="10" rx="2" />
+      <rect class="level-2" x="679" y="81" width="10" height="10" rx="2" />
+      <rect class="level-3" x="679" y="94" width="10" height="10" rx="2" />
+      <rect class="level-3" x="692" y="16" width="10" height="10" rx="2" />
+      <rect class="level-3" x="692" y="29" width="10" height="10" rx="2" />
+      <rect class="level-1" x="692" y="42" width="10" height="10" rx="2" />
+      <rect class="level-1" x="692" y="55" width="10" height="10" rx="2" />
+      <rect class="level-2" x="692" y="68" width="10" height="10" rx="2" />
+      <rect class="level-4" x="692" y="81" width="10" height="10" rx="2" />
+    <animate
+      attributeName="opacity"
+      values="1;1;1;0"
+      keyTimes="0;0.281818;0.909091;1"
+      dur="5.5s"
+      repeatCount="indefinite"
+    />
+  </g>
+
+  <g id="scanner" filter="url(#scanner-glow)" opacity="0">
+    <rect x="-14" y="12" width="28" height="96" fill="url(#scanner-beam)" />
+    <line class="scanner-line" x1="0" y1="14" x2="0" y2="106" stroke-width="1.1" />
+    <animateTransform
+      attributeName="transform"
+      type="translate"
+      values="16 0;16 0;702 0;702 0;16 0"
+      keyTimes="0;0.063636;0.281818;0.909091;1"
+      dur="5.5s"
+      repeatCount="indefinite"
+    />
+    <animate
+      attributeName="opacity"
+      values="0;0;1;1;0;0"
+      keyTimes="0;0.054545;0.063636;0.272727;0.281818;1"
+      dur="5.5s"
+      repeatCount="indefinite"
+    />
+  </g>
+</svg>
