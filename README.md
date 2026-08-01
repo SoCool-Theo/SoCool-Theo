@@ -1,3 +1,5 @@
 ## Contribution Activity
 
-![Animated GitHub contribution scan](./generated/contribution-scan.svg)
+<p align="center">
+  <img src="./generated/contribution-scan.svg" alt="Animated GitHub contribution scan" />
+</p>

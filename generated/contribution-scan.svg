@@ -58,6 +58,18 @@
         />
       </rect>
     </clipPath>
+
+    <clipPath id="calendar-reveal-clip">
+      <rect x="0" y="0" width="0" height="168">
+        <animate
+          attributeName="width"
+          values="0;46;732;732;0"
+          keyTimes="0;0.063636;0.281818;0.909091;1"
+          dur="5.5s"
+          repeatCount="indefinite"
+        />
+      </rect>
+    </clipPath>
   </defs>
 
   <g id="base-grid" shape-rendering="geometricPrecision">
@@ -488,7 +500,7 @@
     />
   </g>
 
-  <g id="calendar-labels">
+  <g id="calendar-labels" clip-path="url(#calendar-reveal-clip)">
     <text class="axis-label" x="38" y="52" text-anchor="end" dominant-baseline="middle">Mon</text>
     <text class="axis-label" x="38" y="78" text-anchor="end" dominant-baseline="middle">Wed</text>
     <text class="axis-label" x="38" y="104" text-anchor="end" dominant-baseline="middle">Fri</text>
@@ -520,6 +532,13 @@
     <text class="month-total" x="727" y="149" text-anchor="middle">2<title>Aug 2026: 2 contributions</title></text>
     <line class="totals-divider" x1="46" y1="132" x2="732" y2="132" />
     <text class="axis-label" x="38" y="149" text-anchor="end">Total</text>
+    <animate
+      attributeName="opacity"
+      values="1;1;1;0"
+      keyTimes="0;0.281818;0.909091;1"
+      dur="5.5s"
+      repeatCount="indefinite"
+    />
   </g>
 
   <g id="scanner" filter="url(#scanner-glow)" opacity="0">

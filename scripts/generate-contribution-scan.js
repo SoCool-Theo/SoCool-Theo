@@ -349,6 +349,18 @@ function buildSvg(contributionData, username) {
         />
       </rect>
     </clipPath>
+
+    <clipPath id="calendar-reveal-clip">
+      <rect x="0" y="0" width="0" height="${height}">
+        <animate
+          attributeName="width"
+          values="0;${gridLeft};${gridRight};${gridRight};0"
+          keyTimes="${revealTimes}"
+          dur="${duration}"
+          repeatCount="indefinite"
+        />
+      </rect>
+    </clipPath>
   </defs>
 
   <g id="base-grid" shape-rendering="geometricPrecision">
@@ -366,8 +378,15 @@ ${renderContributionGrid(contributions, gridLeft, gridTop)}
     />
   </g>
 
-  <g id="calendar-labels">
+  <g id="calendar-labels" clip-path="url(#calendar-reveal-clip)">
 ${renderCalendarLabels(contributionData.months, gridLeft, gridTop, gridWidth, gridHeight)}
+    <animate
+      attributeName="opacity"
+      values="1;1;1;0"
+      keyTimes="0;${scanEnd};${holdEnd};1"
+      dur="${duration}"
+      repeatCount="indefinite"
+    />
   </g>
 
   <g id="scanner" filter="url(#scanner-glow)" opacity="0">
