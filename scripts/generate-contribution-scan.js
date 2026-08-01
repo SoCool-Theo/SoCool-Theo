@@ -8,6 +8,9 @@ const CONFIG = Object.freeze({
   cellSize: 10,
   gap: 3,
   padding: 16,
+  dayLabelWidth: 30,
+  monthLabelHeight: 18,
+  totalsFooterHeight: 30,
   animationSeconds: 5.5,
   scanStartSeconds: 0.35,
   scanEndSeconds: 1.55,
@@ -21,6 +24,21 @@ const CONTRIBUTION_LEVELS = Object.freeze({
   THIRD_QUARTILE: 3,
   FOURTH_QUARTILE: 4,
 });
+
+const MONTH_NAMES = Object.freeze([
+  "Jan",
+  "Feb",
+  "Mar",
+  "Apr",
+  "May",
+  "Jun",
+  "Jul",
+  "Aug",
+  "Sep",
+  "Oct",
+  "Nov",
+  "Dec",
+]);
 
 const CONTRIBUTION_QUERY = `
   query ContributionCalendar($login: String!) {
@@ -80,9 +98,41 @@ function normalizeContributionCalendar(calendar) {
   }
 
   return {
+    months: summarizeMonths(weeks),
     totalContributions: calendar.totalContributions,
     weeks,
   };
+}
+
+function summarizeMonths(weeks) {
+  const monthsByKey = new Map();
+
+  weeks.forEach((week, weekIndex) => {
+    week.forEach((day) => {
+      if (!day.date) return;
+
+      const key = day.date.slice(0, 7);
+      let month = monthsByKey.get(key);
+
+      if (!month) {
+        const monthIndex = Number(day.date.slice(5, 7)) - 1;
+        month = {
+          endWeek: weekIndex,
+          key,
+          label: MONTH_NAMES[monthIndex],
+          startWeek: weekIndex,
+          totalContributions: 0,
+          year: Number(day.date.slice(0, 4)),
+        };
+        monthsByKey.set(key, month);
+      }
+
+      month.endWeek = weekIndex;
+      month.totalContributions += day.count;
+    });
+  });
+
+  return Array.from(monthsByKey.values());
 }
 
 async function fetchGitHubContributionData(username, token) {
@@ -122,20 +172,20 @@ async function fetchGitHubContributionData(username, token) {
   return normalizeContributionCalendar(calendar);
 }
 
-function cellPosition(week, day) {
+function cellPosition(week, day, gridLeft, gridTop) {
   const step = CONFIG.cellSize + CONFIG.gap;
   return {
-    x: CONFIG.padding + week * step,
-    y: CONFIG.padding + day * step,
+    x: gridLeft + week * step,
+    y: gridTop + day * step,
   };
 }
 
-function renderBaseGrid(weekCount) {
+function renderBaseGrid(weekCount, gridLeft, gridTop) {
   const cells = [];
 
   for (let week = 0; week < weekCount; week += 1) {
     for (let day = 0; day < CONFIG.days; day += 1) {
-      const { x, y } = cellPosition(week, day);
+      const { x, y } = cellPosition(week, day, gridLeft, gridTop);
       cells.push(
         `    <rect class="base-cell" x="${x}" y="${y}" width="${CONFIG.cellSize}" height="${CONFIG.cellSize}" rx="2" />`,
       );
@@ -145,14 +195,14 @@ function renderBaseGrid(weekCount) {
   return cells.join("\n");
 }
 
-function renderContributionGrid(contributions) {
+function renderContributionGrid(contributions, gridLeft, gridTop) {
   const cells = [];
 
   contributions.forEach((weekData, week) => {
     weekData.forEach((contribution, day) => {
       if (contribution.level === 0) return;
 
-      const { x, y } = cellPosition(week, day);
+      const { x, y } = cellPosition(week, day, gridLeft, gridTop);
       const contributionLabel = contribution.count === 1 ? "contribution" : "contributions";
       cells.push(
         `      <rect class="level-${contribution.level}" x="${x}" y="${y}" width="${CONFIG.cellSize}" height="${CONFIG.cellSize}" rx="2"><title>${contribution.date}: ${contribution.count} ${contributionLabel}</title></rect>`,
@@ -161,6 +211,49 @@ function renderContributionGrid(contributions) {
   });
 
   return cells.join("\n");
+}
+
+function renderCalendarLabels(months, gridLeft, gridTop, gridWidth, gridHeight) {
+  const step = CONFIG.cellSize + CONFIG.gap;
+  const dayLabels = [
+    { day: 1, label: "Mon" },
+    { day: 3, label: "Wed" },
+    { day: 5, label: "Fri" },
+  ];
+  const monthLabelY = gridTop - 8;
+  const dividerY = gridTop + gridHeight + 10;
+  const totalLabelY = dividerY + 17;
+  const labels = [];
+
+  dayLabels.forEach(({ day, label }) => {
+    const y = gridTop + day * step + CONFIG.cellSize / 2;
+    labels.push(
+      `    <text class="axis-label" x="${gridLeft - 8}" y="${y}" text-anchor="end" dominant-baseline="middle">${label}</text>`,
+    );
+  });
+
+  months.forEach((month) => {
+    const monthX = gridLeft + month.startWeek * step;
+    const totalX =
+      gridLeft + ((month.startWeek + month.endWeek) / 2) * step + CONFIG.cellSize / 2;
+    const accessibleMonth = `${month.label} ${month.year}`;
+
+    labels.push(
+      `    <text class="axis-label" x="${monthX}" y="${monthLabelY}">${month.label}<title>${accessibleMonth}</title></text>`,
+    );
+    labels.push(
+      `    <text class="month-total" x="${totalX}" y="${totalLabelY}" text-anchor="middle">${month.totalContributions}<title>${accessibleMonth}: ${month.totalContributions} contributions</title></text>`,
+    );
+  });
+
+  labels.push(
+    `    <line class="totals-divider" x1="${gridLeft}" y1="${dividerY}" x2="${gridLeft + gridWidth}" y2="${dividerY}" />`,
+  );
+  labels.push(
+    `    <text class="axis-label" x="${gridLeft - 8}" y="${totalLabelY}" text-anchor="end">Total</text>`,
+  );
+
+  return labels.join("\n");
 }
 
 function escapeXml(value) {
@@ -178,10 +271,14 @@ function buildSvg(contributionData, username) {
   const step = CONFIG.cellSize + CONFIG.gap;
   const gridWidth = (weekCount - 1) * step + CONFIG.cellSize;
   const gridHeight = (CONFIG.days - 1) * step + CONFIG.cellSize;
-  const width = gridWidth + CONFIG.padding * 2;
-  const height = gridHeight + CONFIG.padding * 2;
-  const gridLeft = CONFIG.padding;
-  const gridTop = CONFIG.padding;
+  const width = gridWidth + CONFIG.padding * 2 + CONFIG.dayLabelWidth;
+  const height =
+    gridHeight +
+    CONFIG.padding * 2 +
+    CONFIG.monthLabelHeight +
+    CONFIG.totalsFooterHeight;
+  const gridLeft = CONFIG.padding + CONFIG.dayLabelWidth;
+  const gridTop = CONFIG.padding + CONFIG.monthLabelHeight;
   const gridRight = gridLeft + gridWidth;
   const duration = `${CONFIG.animationSeconds}s`;
   const scanStart = normalizeTime(CONFIG.scanStartSeconds);
@@ -205,6 +302,13 @@ function buildSvg(contributionData, username) {
       .level-4 { fill: #216e39; }
       .scanner-line { stroke: #1f883d; }
       .scanner-stop { stop-color: #2da44e; }
+      .axis-label, .month-total {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        font-size: 9px;
+      }
+      .axis-label { fill: #59636e; }
+      .month-total { fill: #1f2328; font-weight: 600; }
+      .totals-divider { stroke: #d0d7de; stroke-width: 0.5; }
 
       @media (prefers-color-scheme: dark) {
         .base-cell { fill: #161b22; stroke: #30363d; }
@@ -214,6 +318,9 @@ function buildSvg(contributionData, username) {
         .level-4 { fill: #39d353; }
         .scanner-line { stroke: #7ee787; }
         .scanner-stop { stop-color: #39d353; }
+        .axis-label { fill: #9198a1; }
+        .month-total { fill: #f0f6fc; }
+        .totals-divider { stroke: #30363d; }
       }
     </style>
 
@@ -245,11 +352,11 @@ function buildSvg(contributionData, username) {
   </defs>
 
   <g id="base-grid" shape-rendering="geometricPrecision">
-${renderBaseGrid(weekCount)}
+${renderBaseGrid(weekCount, gridLeft, gridTop)}
   </g>
 
   <g id="revealed-contributions" clip-path="url(#reveal-clip)" shape-rendering="geometricPrecision">
-${renderContributionGrid(contributions)}
+${renderContributionGrid(contributions, gridLeft, gridTop)}
     <animate
       attributeName="opacity"
       values="1;1;1;0"
@@ -257,6 +364,10 @@ ${renderContributionGrid(contributions)}
       dur="${duration}"
       repeatCount="indefinite"
     />
+  </g>
+
+  <g id="calendar-labels">
+${renderCalendarLabels(contributionData.months, gridLeft, gridTop, gridWidth, gridHeight)}
   </g>
 
   <g id="scanner" filter="url(#scanner-glow)" opacity="0">
