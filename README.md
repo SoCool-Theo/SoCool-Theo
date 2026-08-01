@@ -1,3 +1,3 @@
-# SoCool-Theo
+## Contribution Activity
 
-<!-- The animated contribution scan will be embedded here. -->
+![Animated GitHub contribution scan](./generated/contribution-scan.svg)

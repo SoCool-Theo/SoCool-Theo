@@ -3,7 +3,8 @@ name: Contribution scan
 on:
   workflow_dispatch:
   schedule:
-    - cron: "17 0 * * *"
+    - cron: "0 0 * * *"
+      timezone: "Asia/Bangkok"
 
 permissions:
   contents: write
