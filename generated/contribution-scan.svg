@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="748" height="168" viewBox="0 0 748 168" role="img" aria-labelledby="title description">
   <title id="title">SoCool-Theo's animated contribution scan</title>
-  <desc id="description">A glowing vertical line moves from left to right and reveals 143 contributions from SoCool-Theo's latest GitHub contribution calendar.</desc>
+  <desc id="description">A glowing vertical line moves from left to right and reveals 147 contributions from SoCool-Theo's latest GitHub contribution calendar.</desc>
 
   <defs>
     <style>
@@ -490,7 +490,7 @@
       <rect class="level-2" x="722" y="73" width="10" height="10" rx="2"><title>2026-07-29: 3 contributions</title></rect>
       <rect class="level-2" x="722" y="86" width="10" height="10" rx="2"><title>2026-07-30: 4 contributions</title></rect>
       <rect class="level-1" x="722" y="99" width="10" height="10" rx="2"><title>2026-07-31: 1 contribution</title></rect>
-      <rect class="level-1" x="722" y="112" width="10" height="10" rx="2"><title>2026-08-01: 2 contributions</title></rect>
+      <rect class="level-3" x="722" y="112" width="10" height="10" rx="2"><title>2026-08-01: 6 contributions</title></rect>
     <animate
       attributeName="opacity"
       values="1;1;1;0"
@@ -504,6 +504,8 @@
     <text class="axis-label" x="38" y="52" text-anchor="end" dominant-baseline="middle">Mon</text>
     <text class="axis-label" x="38" y="78" text-anchor="end" dominant-baseline="middle">Wed</text>
     <text class="axis-label" x="38" y="104" text-anchor="end" dominant-baseline="middle">Fri</text>
+    <text class="axis-label" x="46" y="26">Jul<title>Jul 2025</title></text>
+    <text class="month-total" x="51" y="149" text-anchor="middle">0<title>Jul 2025: 0 contributions</title></text>
     <text class="axis-label" x="46" y="26">Aug<title>Aug 2025</title></text>
     <text class="month-total" x="83.5" y="149" text-anchor="middle">0<title>Aug 2025: 0 contributions</title></text>
     <text class="axis-label" x="111" y="26">Sep<title>Sep 2025</title></text>
@@ -529,7 +531,7 @@
     <text class="axis-label" x="670" y="26">Jul<title>Jul 2026</title></text>
     <text class="month-total" x="701" y="149" text-anchor="middle">65<title>Jul 2026: 65 contributions</title></text>
     <text class="axis-label" x="722" y="26">Aug<title>Aug 2026</title></text>
-    <text class="month-total" x="727" y="149" text-anchor="middle">2<title>Aug 2026: 2 contributions</title></text>
+    <text class="month-total" x="727" y="149" text-anchor="middle">6<title>Aug 2026: 6 contributions</title></text>
     <line class="totals-divider" x1="46" y1="132" x2="732" y2="132" />
     <text class="axis-label" x="38" y="149" text-anchor="end">Total</text>
     <animate
