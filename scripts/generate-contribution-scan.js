@@ -11,6 +11,9 @@ const CONFIG = Object.freeze({
   dayLabelWidth: 30,
   monthLabelHeight: 18,
   totalsFooterHeight: 30,
+  framePaddingX: 30,
+  framePaddingY: 24,
+  frameRadius: 22,
   animationSeconds: 5.5,
   scanStartSeconds: 0.35,
   scanEndSeconds: 1.55,
@@ -271,12 +274,14 @@ function buildSvg(contributionData, username) {
   const step = CONFIG.cellSize + CONFIG.gap;
   const gridWidth = (weekCount - 1) * step + CONFIG.cellSize;
   const gridHeight = (CONFIG.days - 1) * step + CONFIG.cellSize;
-  const width = gridWidth + CONFIG.padding * 2 + CONFIG.dayLabelWidth;
-  const height =
+  const innerWidth = gridWidth + CONFIG.padding * 2 + CONFIG.dayLabelWidth;
+  const innerHeight =
     gridHeight +
     CONFIG.padding * 2 +
     CONFIG.monthLabelHeight +
     CONFIG.totalsFooterHeight;
+  const width = innerWidth + CONFIG.framePaddingX * 2;
+  const height = innerHeight + CONFIG.framePaddingY * 2;
   const gridLeft = CONFIG.padding + CONFIG.dayLabelWidth;
   const gridTop = CONFIG.padding + CONFIG.monthLabelHeight;
   const gridRight = gridLeft + gridWidth;
@@ -351,7 +356,7 @@ function buildSvg(contributionData, username) {
     </clipPath>
 
     <clipPath id="calendar-reveal-clip">
-      <rect x="0" y="0" width="0" height="${height}">
+      <rect x="0" y="0" width="0" height="${innerHeight}">
         <animate
           attributeName="width"
           values="0;${gridLeft};${gridRight};${gridRight};0"
@@ -363,6 +368,19 @@ function buildSvg(contributionData, username) {
     </clipPath>
   </defs>
 
+  <rect
+    id="outer-frame"
+    x="1"
+    y="1"
+    width="${width - 2}"
+    height="${height - 2}"
+    rx="${CONFIG.frameRadius}"
+    fill="#0d1117"
+    stroke="#238636"
+    stroke-width="2"
+  />
+
+  <g id="contribution-calendar" transform="translate(${CONFIG.framePaddingX} ${CONFIG.framePaddingY})">
   <g id="base-grid" shape-rendering="geometricPrecision">
 ${renderBaseGrid(weekCount, gridLeft, gridTop)}
   </g>
@@ -407,6 +425,7 @@ ${renderCalendarLabels(contributionData.months, gridLeft, gridTop, gridWidth, gr
       dur="${duration}"
       repeatCount="indefinite"
     />
+  </g>
   </g>
 </svg>
 `;
