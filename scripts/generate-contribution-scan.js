@@ -11,9 +11,12 @@ const CONFIG = Object.freeze({
   dayLabelWidth: 30,
   monthLabelHeight: 18,
   totalsFooterHeight: 30,
-  framePaddingX: 30,
-  framePaddingY: 24,
-  frameRadius: 22,
+  framePaddingX: 42,
+  framePaddingY: 34,
+  frameRadius: 26,
+  frameInset: 5,
+  innerFrameInset: 14,
+  calendarPanelMargin: 10,
   animationSeconds: 5.5,
   scanStartSeconds: 0.35,
   scanEndSeconds: 1.55,
@@ -282,6 +285,10 @@ function buildSvg(contributionData, username) {
     CONFIG.totalsFooterHeight;
   const width = innerWidth + CONFIG.framePaddingX * 2;
   const height = innerHeight + CONFIG.framePaddingY * 2;
+  const calendarPanelX = CONFIG.framePaddingX - CONFIG.calendarPanelMargin;
+  const calendarPanelY = CONFIG.framePaddingY - CONFIG.calendarPanelMargin;
+  const calendarPanelWidth = innerWidth + CONFIG.calendarPanelMargin * 2;
+  const calendarPanelHeight = innerHeight + CONFIG.calendarPanelMargin * 2;
   const gridLeft = CONFIG.padding + CONFIG.dayLabelWidth;
   const gridTop = CONFIG.padding + CONFIG.monthLabelHeight;
   const gridRight = gridLeft + gridWidth;
@@ -300,34 +307,53 @@ function buildSvg(contributionData, username) {
 
   <defs>
     <style>
-      .base-cell { fill: #ebedf0; stroke: #d0d7de; stroke-width: 0.5; }
-      .level-1 { fill: #9be9a8; }
-      .level-2 { fill: #40c463; }
-      .level-3 { fill: #30a14e; }
-      .level-4 { fill: #216e39; }
-      .scanner-line { stroke: #1f883d; }
-      .scanner-stop { stop-color: #2da44e; }
+      .base-cell { fill: #161b22; stroke: #234c35; stroke-width: 0.5; }
+      .level-1 { fill: #0e4429; }
+      .level-2 { fill: #006d32; }
+      .level-3 { fill: #26a641; }
+      .level-4 { fill: #39d353; }
+      .scanner-line { stroke: #7ee787; }
+      .scanner-stop { stop-color: #39d353; }
       .axis-label, .month-total {
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
         font-size: 9px;
       }
-      .axis-label { fill: #59636e; }
-      .month-total { fill: #1f2328; font-weight: 600; }
-      .totals-divider { stroke: #d0d7de; stroke-width: 0.5; }
-
-      @media (prefers-color-scheme: dark) {
-        .base-cell { fill: #161b22; stroke: #30363d; }
-        .level-1 { fill: #0e4429; }
-        .level-2 { fill: #006d32; }
-        .level-3 { fill: #26a641; }
-        .level-4 { fill: #39d353; }
-        .scanner-line { stroke: #7ee787; }
-        .scanner-stop { stop-color: #39d353; }
-        .axis-label { fill: #9198a1; }
-        .month-total { fill: #f0f6fc; }
-        .totals-divider { stroke: #30363d; }
-      }
+      .axis-label { fill: #8b949e; }
+      .month-total { fill: #c9d1d9; font-weight: 600; }
+      .totals-divider { stroke: #234c35; stroke-width: 0.5; }
     </style>
+
+    <linearGradient id="frame-background" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#07110b" />
+      <stop offset="48%" stop-color="#0b2415" />
+      <stop offset="100%" stop-color="#06100a" />
+    </linearGradient>
+
+    <linearGradient id="calendar-background" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#07130c" />
+      <stop offset="50%" stop-color="#050d09" />
+      <stop offset="100%" stop-color="#09180f" />
+    </linearGradient>
+
+    <radialGradient id="ambient-glow" cx="50%" cy="50%" r="65%">
+      <stop offset="0%" stop-color="#238636" stop-opacity="0.3" />
+      <stop offset="55%" stop-color="#0e4429" stop-opacity="0.12" />
+      <stop offset="100%" stop-color="#0e4429" stop-opacity="0" />
+    </radialGradient>
+
+    <pattern id="circuit-pattern" width="56" height="56" patternUnits="userSpaceOnUse">
+      <path d="M0 14h18l6 6h16l8-8h8M0 42h14l8-8h13l7 7h14M14 0v10l7 7M42 56V46l-7-7" fill="none" stroke="#238636" stroke-width="0.65" opacity="0.32" />
+      <circle cx="18" cy="14" r="1.2" fill="#39d353" opacity="0.28" />
+      <circle cx="42" cy="42" r="1.2" fill="#39d353" opacity="0.22" />
+    </pattern>
+
+    <filter id="outer-glow" x="-20%" y="-30%" width="140%" height="160%">
+      <feGaussianBlur stdDeviation="3.2" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
 
     <linearGradient id="scanner-beam" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop class="scanner-stop" offset="0%" stop-opacity="0" />
@@ -342,6 +368,10 @@ function buildSvg(contributionData, username) {
         <feMergeNode in="SourceGraphic" />
       </feMerge>
     </filter>
+
+    <clipPath id="calendar-panel-clip">
+      <rect x="${calendarPanelX}" y="${calendarPanelY}" width="${calendarPanelWidth}" height="${calendarPanelHeight}" rx="16" />
+    </clipPath>
 
     <clipPath id="reveal-clip">
       <rect x="${gridLeft}" y="${gridTop}" width="0" height="${gridHeight}">
@@ -370,14 +400,50 @@ function buildSvg(contributionData, username) {
 
   <rect
     id="outer-frame"
-    x="1"
-    y="1"
-    width="${width - 2}"
-    height="${height - 2}"
+    x="${CONFIG.frameInset}"
+    y="${CONFIG.frameInset}"
+    width="${width - CONFIG.frameInset * 2}"
+    height="${height - CONFIG.frameInset * 2}"
     rx="${CONFIG.frameRadius}"
-    fill="#0d1117"
+    fill="url(#frame-background)"
+    stroke="#39d353"
+    stroke-width="2.4"
+    filter="url(#outer-glow)"
+  />
+
+  <rect
+    id="outer-frame-highlight"
+    x="${CONFIG.innerFrameInset}"
+    y="${CONFIG.innerFrameInset}"
+    width="${width - CONFIG.innerFrameInset * 2}"
+    height="${height - CONFIG.innerFrameInset * 2}"
+    rx="${CONFIG.frameRadius - 8}"
+    fill="url(#ambient-glow)"
     stroke="#238636"
-    stroke-width="2"
+    stroke-width="1"
+  />
+
+  <rect
+    id="calendar-panel"
+    x="${calendarPanelX}"
+    y="${calendarPanelY}"
+    width="${calendarPanelWidth}"
+    height="${calendarPanelHeight}"
+    rx="16"
+    fill="url(#calendar-background)"
+    stroke="#2ea043"
+    stroke-width="1.4"
+  />
+
+  <rect
+    id="circuit-texture"
+    x="${calendarPanelX}"
+    y="${calendarPanelY}"
+    width="${calendarPanelWidth}"
+    height="${calendarPanelHeight}"
+    fill="url(#circuit-pattern)"
+    clip-path="url(#calendar-panel-clip)"
+    opacity="0.2"
   />
 
   <g id="contribution-calendar" transform="translate(${CONFIG.framePaddingX} ${CONFIG.framePaddingY})">
