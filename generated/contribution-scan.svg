@@ -26,23 +26,11 @@
       <stop offset="100%" stop-color="#06100a" />
     </linearGradient>
 
-    <linearGradient id="calendar-background" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#07130c" />
-      <stop offset="50%" stop-color="#050d09" />
-      <stop offset="100%" stop-color="#09180f" />
-    </linearGradient>
-
     <radialGradient id="ambient-glow" cx="50%" cy="50%" r="65%">
       <stop offset="0%" stop-color="#238636" stop-opacity="0.3" />
       <stop offset="55%" stop-color="#0e4429" stop-opacity="0.12" />
       <stop offset="100%" stop-color="#0e4429" stop-opacity="0" />
     </radialGradient>
-
-    <pattern id="circuit-pattern" width="56" height="56" patternUnits="userSpaceOnUse">
-      <path d="M0 14h18l6 6h16l8-8h8M0 42h14l8-8h13l7 7h14M14 0v10l7 7M42 56V46l-7-7" fill="none" stroke="#238636" stroke-width="0.65" opacity="0.32" />
-      <circle cx="18" cy="14" r="1.2" fill="#39d353" opacity="0.28" />
-      <circle cx="42" cy="42" r="1.2" fill="#39d353" opacity="0.22" />
-    </pattern>
 
     <filter id="outer-glow" x="-20%" y="-30%" width="140%" height="160%">
       <feGaussianBlur stdDeviation="1.6" result="blur" />
@@ -65,10 +53,6 @@
         <feMergeNode in="SourceGraphic" />
       </feMerge>
     </filter>
-
-    <clipPath id="calendar-panel-clip">
-      <rect x="11" y="11" width="768" height="188" rx="16" />
-    </clipPath>
 
     <clipPath id="reveal-clip">
       <rect x="46" y="34" width="0" height="88">
@@ -126,20 +110,9 @@
     width="768"
     height="188"
     rx="16"
-    fill="url(#calendar-background)"
+    fill="#050d09"
     stroke="#2ea043"
     stroke-width="0.8"
-  />
-
-  <rect
-    id="circuit-texture"
-    x="11"
-    y="11"
-    width="768"
-    height="188"
-    fill="url(#circuit-pattern)"
-    clip-path="url(#calendar-panel-clip)"
-    opacity="0.2"
   />
 
   <g id="contribution-calendar" transform="translate(21 21)">
