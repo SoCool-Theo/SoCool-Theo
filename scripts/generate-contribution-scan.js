@@ -318,8 +318,8 @@ function buildSvg(contributionData, username) {
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
         font-size: 9px;
       }
-      .axis-label { fill: #8b949e; }
-      .month-total { fill: #c9d1d9; font-weight: 600; }
+      .axis-label { fill: #f6f8fa; }
+      .month-total { fill: #ffffff; font-weight: 600; }
       .totals-divider { stroke: #234c35; stroke-width: 0.5; }
     </style>
 
