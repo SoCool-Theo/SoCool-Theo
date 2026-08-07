@@ -578,13 +578,13 @@
 
   <g id="calendar-labels" clip-path="url(#calendar-reveal-clip)">
     <g id="contribution-legend" role="img" aria-label="Contribution intensity from less to more">
-    <text class="legend-label" x="602" y="9">Less</text>
-    <rect class="legend-cell legend-empty" x="634" y="0" width="10" height="10" rx="2" />
-    <rect class="legend-cell level-1" x="647" y="0" width="10" height="10" rx="2" />
-    <rect class="legend-cell level-2" x="660" y="0" width="10" height="10" rx="2" />
-    <rect class="legend-cell level-3" x="673" y="0" width="10" height="10" rx="2" />
-    <rect class="legend-cell level-4" x="686" y="0" width="10" height="10" rx="2" />
-    <text class="legend-label" x="704" y="9">More</text>
+    <text class="legend-label" x="602" y="12">Less</text>
+    <rect class="legend-cell legend-empty" x="634" y="3" width="10" height="10" rx="2" />
+    <rect class="legend-cell level-1" x="647" y="3" width="10" height="10" rx="2" />
+    <rect class="legend-cell level-2" x="660" y="3" width="10" height="10" rx="2" />
+    <rect class="legend-cell level-3" x="673" y="3" width="10" height="10" rx="2" />
+    <rect class="legend-cell level-4" x="686" y="3" width="10" height="10" rx="2" />
+    <text class="legend-label" x="704" y="12">More</text>
     </g>
     <text class="axis-label" x="38" y="52" text-anchor="end" dominant-baseline="middle">Mon</text>
     <text class="axis-label" x="38" y="78" text-anchor="end" dominant-baseline="middle">Wed</text>

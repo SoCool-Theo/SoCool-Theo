@@ -270,8 +270,8 @@ function renderContributionLegend(innerWidth) {
   const lessLabelWidth = 24;
   const moreLabelWidth = 30;
   const rightPadding = 14;
-  const cellY = 0;
-  const labelY = 9;
+  const cellY = 3;
+  const labelY = 12;
   const moreX = innerWidth - rightPadding - moreLabelWidth;
   const cellsWidth = cellCount * cellSize + (cellCount - 1) * cellGap;
   const cellsX = moreX - labelGap - cellsWidth;
