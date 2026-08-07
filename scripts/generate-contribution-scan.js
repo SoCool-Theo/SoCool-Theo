@@ -355,9 +355,9 @@ function buildSvg(contributionData, username) {
     </style>
 
     <linearGradient id="frame-background" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#07110b" />
-      <stop offset="48%" stop-color="#0b2415" />
-      <stop offset="100%" stop-color="#06100a" />
+      <stop offset="0%" stop-color="#050b10" />
+      <stop offset="48%" stop-color="#082124" />
+      <stop offset="100%" stop-color="#050b10" />
     </linearGradient>
 
     <linearGradient id="calendar-background" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -367,9 +367,9 @@ function buildSvg(contributionData, username) {
     </linearGradient>
 
     <radialGradient id="ambient-glow" cx="50%" cy="50%" r="65%">
-      <stop offset="0%" stop-color="#238636" stop-opacity="0.3" />
-      <stop offset="55%" stop-color="#0e4429" stop-opacity="0.12" />
-      <stop offset="100%" stop-color="#0e4429" stop-opacity="0" />
+      <stop offset="0%" stop-color="#22d3ee" stop-opacity="0.22" />
+      <stop offset="55%" stop-color="#14b8a6" stop-opacity="0.08" />
+      <stop offset="100%" stop-color="#14b8a6" stop-opacity="0" />
     </radialGradient>
 
     <pattern id="circuit-pattern" width="56" height="56" patternUnits="userSpaceOnUse">
@@ -379,7 +379,7 @@ function buildSvg(contributionData, username) {
     </pattern>
 
     <filter id="outer-glow" x="-20%" y="-30%" width="140%" height="160%">
-      <feGaussianBlur stdDeviation="3.2" result="blur" />
+      <feGaussianBlur stdDeviation="2.4" result="blur" />
       <feMerge>
         <feMergeNode in="blur" />
         <feMergeNode in="SourceGraphic" />
@@ -437,8 +437,8 @@ function buildSvg(contributionData, username) {
     height="${height - CONFIG.frameInset * 2}"
     rx="${CONFIG.frameRadius}"
     fill="url(#frame-background)"
-    stroke="#39d353"
-    stroke-width="2.4"
+    stroke="#2dd4bf"
+    stroke-width="1.4"
     filter="url(#outer-glow)"
   />
 
@@ -461,8 +461,8 @@ function buildSvg(contributionData, username) {
     height="${calendarPanelHeight}"
     rx="16"
     fill="url(#calendar-background)"
-    stroke="#2ea043"
-    stroke-width="1.4"
+    stroke="#155e75"
+    stroke-width="1"
   />
 
   <rect
