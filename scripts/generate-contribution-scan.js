@@ -262,6 +262,32 @@ function renderCalendarLabels(months, gridLeft, gridTop, gridWidth, gridHeight) 
   return labels.join("\n");
 }
 
+function renderContributionLegend(innerWidth) {
+  const cellSize = 8;
+  const cellGap = 3;
+  const cellCount = 5;
+  const labelGap = 7;
+  const lessLabelWidth = 20;
+  const moreLabelWidth = 25;
+  const rightPadding = 12;
+  const cellY = 5;
+  const labelY = 13;
+  const moreX = innerWidth - rightPadding - moreLabelWidth;
+  const cellsWidth = cellCount * cellSize + (cellCount - 1) * cellGap;
+  const cellsX = moreX - labelGap - cellsWidth;
+  const lessX = cellsX - labelGap - lessLabelWidth;
+  const cells = ["legend-empty", "level-1", "level-2", "level-3", "level-4"]
+    .map((className, index) => {
+      const x = cellsX + index * (cellSize + cellGap);
+      return `    <rect class="legend-cell ${className}" x="${x}" y="${cellY}" width="${cellSize}" height="${cellSize}" rx="2" />`;
+    })
+    .join("\n");
+
+  return `    <text class="legend-label" x="${lessX}" y="${labelY}">Less</text>
+${cells}
+    <text class="legend-label" x="${moreX}" y="${labelY}">More</text>`;
+}
+
 function escapeXml(value) {
   return String(value)
     .replaceAll("&", "&amp;")
@@ -314,12 +340,15 @@ function buildSvg(contributionData, username) {
       .level-4 { fill: #39d353; }
       .scanner-line { stroke: #7ee787; }
       .scanner-stop { stop-color: #39d353; }
-      .axis-label, .month-total {
+      .axis-label, .month-total, .legend-label {
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
         font-size: 9px;
       }
       .axis-label { fill: #8b949e; }
       .month-total { fill: #c9d1d9; font-weight: 600; }
+      .legend-label { fill: #8b949e; }
+      .legend-cell { stroke-width: 0.5; }
+      .legend-empty { fill: #161b22; stroke: #234c35; }
       .totals-divider { stroke: #234c35; stroke-width: 0.5; }
     </style>
 
@@ -419,8 +448,7 @@ function buildSvg(contributionData, username) {
     height="${height - CONFIG.innerFrameInset * 2}"
     rx="${CONFIG.frameRadius - 8}"
     fill="url(#ambient-glow)"
-    stroke="#238636"
-    stroke-width="1"
+    stroke="none"
   />
 
   <rect
@@ -447,6 +475,10 @@ function buildSvg(contributionData, username) {
   />
 
   <g id="contribution-calendar" transform="translate(${CONFIG.framePaddingX} ${CONFIG.framePaddingY})">
+  <g id="contribution-legend" role="img" aria-label="Contribution intensity from less to more">
+${renderContributionLegend(innerWidth)}
+  </g>
+
   <g id="base-grid" shape-rendering="geometricPrecision">
 ${renderBaseGrid(weekCount, gridLeft, gridTop)}
   </g>

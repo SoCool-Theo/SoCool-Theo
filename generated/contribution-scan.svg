@@ -11,12 +11,15 @@
       .level-4 { fill: #39d353; }
       .scanner-line { stroke: #7ee787; }
       .scanner-stop { stop-color: #39d353; }
-      .axis-label, .month-total {
+      .axis-label, .month-total, .legend-label {
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
         font-size: 9px;
       }
       .axis-label { fill: #8b949e; }
       .month-total { fill: #c9d1d9; font-weight: 600; }
+      .legend-label { fill: #8b949e; }
+      .legend-cell { stroke-width: 0.5; }
+      .legend-empty { fill: #161b22; stroke: #234c35; }
       .totals-divider { stroke: #234c35; stroke-width: 0.5; }
     </style>
 
@@ -116,8 +119,7 @@
     height="208"
     rx="18"
     fill="url(#ambient-glow)"
-    stroke="#238636"
-    stroke-width="1"
+    stroke="none"
   />
 
   <rect
@@ -144,6 +146,16 @@
   />
 
   <g id="contribution-calendar" transform="translate(42 34)">
+  <g id="contribution-legend" role="img" aria-label="Contribution intensity from less to more">
+    <text class="legend-label" x="625" y="13">Less</text>
+    <rect class="legend-cell legend-empty" x="652" y="5" width="8" height="8" rx="2" />
+    <rect class="legend-cell level-1" x="663" y="5" width="8" height="8" rx="2" />
+    <rect class="legend-cell level-2" x="674" y="5" width="8" height="8" rx="2" />
+    <rect class="legend-cell level-3" x="685" y="5" width="8" height="8" rx="2" />
+    <rect class="legend-cell level-4" x="696" y="5" width="8" height="8" rx="2" />
+    <text class="legend-label" x="711" y="13">More</text>
+  </g>
+
   <g id="base-grid" shape-rendering="geometricPrecision">
     <rect class="base-cell" x="46" y="34" width="10" height="10" rx="2" />
     <rect class="base-cell" x="46" y="47" width="10" height="10" rx="2" />
