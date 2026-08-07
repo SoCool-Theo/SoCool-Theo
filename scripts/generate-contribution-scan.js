@@ -262,32 +262,6 @@ function renderCalendarLabels(months, gridLeft, gridTop, gridWidth, gridHeight) 
   return labels.join("\n");
 }
 
-function renderContributionLegend(innerWidth) {
-  const cellSize = 10;
-  const cellGap = 3;
-  const cellCount = 5;
-  const labelGap = 8;
-  const lessLabelWidth = 24;
-  const moreLabelWidth = 30;
-  const rightPadding = 14;
-  const cellY = 3;
-  const labelY = 12;
-  const moreX = innerWidth - rightPadding - moreLabelWidth;
-  const cellsWidth = cellCount * cellSize + (cellCount - 1) * cellGap;
-  const cellsX = moreX - labelGap - cellsWidth;
-  const lessX = cellsX - labelGap - lessLabelWidth;
-  const cells = ["legend-empty", "level-1", "level-2", "level-3", "level-4"]
-    .map((className, index) => {
-      const x = cellsX + index * (cellSize + cellGap);
-      return `    <rect class="legend-cell ${className}" x="${x}" y="${cellY}" width="${cellSize}" height="${cellSize}" rx="2" />`;
-    })
-    .join("\n");
-
-  return `    <text class="legend-label" x="${lessX}" y="${labelY}">Less</text>
-${cells}
-    <text class="legend-label" x="${moreX}" y="${labelY}">More</text>`;
-}
-
 function escapeXml(value) {
   return String(value)
     .replaceAll("&", "&amp;")
@@ -340,17 +314,12 @@ function buildSvg(contributionData, username) {
       .level-4 { fill: #39d353; }
       .scanner-line { stroke: #7ee787; }
       .scanner-stop { stop-color: #39d353; }
-      .axis-label, .month-total, .legend-label {
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      }
       .axis-label, .month-total {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
         font-size: 9px;
       }
       .axis-label { fill: #8b949e; }
       .month-total { fill: #c9d1d9; font-weight: 600; }
-      .legend-label { fill: #8b949e; font-size: 11px; }
-      .legend-cell { stroke-width: 0.5; }
-      .legend-empty { fill: #161b22; stroke: #234c35; }
       .totals-divider { stroke: #234c35; stroke-width: 0.5; }
     </style>
 
@@ -493,9 +462,6 @@ ${renderContributionGrid(contributions, gridLeft, gridTop)}
   </g>
 
   <g id="calendar-labels" clip-path="url(#calendar-reveal-clip)">
-    <g id="contribution-legend" role="img" aria-label="Contribution intensity from less to more">
-${renderContributionLegend(innerWidth)}
-    </g>
 ${renderCalendarLabels(contributionData.months, gridLeft, gridTop, gridWidth, gridHeight)}
     <animate
       attributeName="opacity"
