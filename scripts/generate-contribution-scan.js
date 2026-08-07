@@ -12,7 +12,7 @@ const CONFIG = Object.freeze({
   monthLabelHeight: 18,
   totalsFooterHeight: 30,
   framePaddingX: 42,
-  framePaddingY: 34,
+  framePaddingY: 42,
   frameRadius: 26,
   frameInset: 5,
   innerFrameInset: 14,
@@ -270,8 +270,8 @@ function renderContributionLegend(innerWidth) {
   const lessLabelWidth = 24;
   const moreLabelWidth = 30;
   const rightPadding = 14;
-  const cellY = -2;
-  const labelY = 7;
+  const cellY = 0;
+  const labelY = 9;
   const moreX = innerWidth - rightPadding - moreLabelWidth;
   const cellsWidth = cellCount * cellSize + (cellCount - 1) * cellGap;
   const cellsX = moreX - labelGap - cellsWidth;
@@ -477,10 +477,6 @@ function buildSvg(contributionData, username) {
   />
 
   <g id="contribution-calendar" transform="translate(${CONFIG.framePaddingX} ${CONFIG.framePaddingY})">
-  <g id="contribution-legend" role="img" aria-label="Contribution intensity from less to more">
-${renderContributionLegend(innerWidth)}
-  </g>
-
   <g id="base-grid" shape-rendering="geometricPrecision">
 ${renderBaseGrid(weekCount, gridLeft, gridTop)}
   </g>
@@ -497,6 +493,9 @@ ${renderContributionGrid(contributions, gridLeft, gridTop)}
   </g>
 
   <g id="calendar-labels" clip-path="url(#calendar-reveal-clip)">
+    <g id="contribution-legend" role="img" aria-label="Contribution intensity from less to more">
+${renderContributionLegend(innerWidth)}
+    </g>
 ${renderCalendarLabels(contributionData.months, gridLeft, gridTop, gridWidth, gridHeight)}
     <animate
       attributeName="opacity"
