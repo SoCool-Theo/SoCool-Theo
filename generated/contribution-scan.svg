@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="832" height="252" viewBox="0 0 832 252" role="img" aria-labelledby="title description">
+<svg xmlns="http://www.w3.org/2000/svg" width="790" height="210" viewBox="0 0 790 210" role="img" aria-labelledby="title description">
   <title id="title">SoCool-Theo's animated contribution scan</title>
   <desc id="description">A glowing vertical line moves from left to right and reveals 147 contributions from SoCool-Theo's latest GitHub contribution calendar.</desc>
 
@@ -26,9 +26,9 @@
     </style>
 
     <linearGradient id="frame-background" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#050b10" />
-      <stop offset="48%" stop-color="#082124" />
-      <stop offset="100%" stop-color="#050b10" />
+      <stop offset="0%" stop-color="#07110b" />
+      <stop offset="48%" stop-color="#0b2415" />
+      <stop offset="100%" stop-color="#06100a" />
     </linearGradient>
 
     <linearGradient id="calendar-background" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -38,9 +38,9 @@
     </linearGradient>
 
     <radialGradient id="ambient-glow" cx="50%" cy="50%" r="65%">
-      <stop offset="0%" stop-color="#22d3ee" stop-opacity="0.22" />
-      <stop offset="55%" stop-color="#14b8a6" stop-opacity="0.08" />
-      <stop offset="100%" stop-color="#14b8a6" stop-opacity="0" />
+      <stop offset="0%" stop-color="#238636" stop-opacity="0.3" />
+      <stop offset="55%" stop-color="#0e4429" stop-opacity="0.12" />
+      <stop offset="100%" stop-color="#0e4429" stop-opacity="0" />
     </radialGradient>
 
     <pattern id="circuit-pattern" width="56" height="56" patternUnits="userSpaceOnUse">
@@ -50,7 +50,7 @@
     </pattern>
 
     <filter id="outer-glow" x="-20%" y="-30%" width="140%" height="160%">
-      <feGaussianBlur stdDeviation="2.4" result="blur" />
+      <feGaussianBlur stdDeviation="1.6" result="blur" />
       <feMerge>
         <feMergeNode in="blur" />
         <feMergeNode in="SourceGraphic" />
@@ -72,7 +72,7 @@
     </filter>
 
     <clipPath id="calendar-panel-clip">
-      <rect x="32" y="32" width="768" height="188" rx="16" />
+      <rect x="11" y="11" width="768" height="188" rx="16" />
     </clipPath>
 
     <clipPath id="reveal-clip">
@@ -104,21 +104,21 @@
     id="outer-frame"
     x="5"
     y="5"
-    width="822"
-    height="242"
+    width="780"
+    height="200"
     rx="26"
     fill="url(#frame-background)"
-    stroke="#2dd4bf"
-    stroke-width="1.4"
+    stroke="#39d353"
+    stroke-width="1.2"
     filter="url(#outer-glow)"
   />
 
   <rect
     id="outer-frame-highlight"
-    x="14"
-    y="14"
-    width="804"
-    height="224"
+    x="8"
+    y="8"
+    width="774"
+    height="194"
     rx="18"
     fill="url(#ambient-glow)"
     stroke="none"
@@ -126,20 +126,20 @@
 
   <rect
     id="calendar-panel"
-    x="32"
-    y="32"
+    x="11"
+    y="11"
     width="768"
     height="188"
     rx="16"
     fill="url(#calendar-background)"
-    stroke="#155e75"
-    stroke-width="1"
+    stroke="#2ea043"
+    stroke-width="0.8"
   />
 
   <rect
     id="circuit-texture"
-    x="32"
-    y="32"
+    x="11"
+    y="11"
     width="768"
     height="188"
     fill="url(#circuit-pattern)"
@@ -147,7 +147,7 @@
     opacity="0.2"
   />
 
-  <g id="contribution-calendar" transform="translate(42 42)">
+  <g id="contribution-calendar" transform="translate(21 21)">
   <g id="base-grid" shape-rendering="geometricPrecision">
     <rect class="base-cell" x="46" y="34" width="10" height="10" rx="2" />
     <rect class="base-cell" x="46" y="47" width="10" height="10" rx="2" />
