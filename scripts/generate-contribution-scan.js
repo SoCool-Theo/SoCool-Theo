@@ -263,15 +263,15 @@ function renderCalendarLabels(months, gridLeft, gridTop, gridWidth, gridHeight) 
 }
 
 function renderContributionLegend(innerWidth) {
-  const cellSize = 8;
+  const cellSize = 10;
   const cellGap = 3;
   const cellCount = 5;
-  const labelGap = 7;
-  const lessLabelWidth = 20;
-  const moreLabelWidth = 25;
-  const rightPadding = 12;
-  const cellY = 5;
-  const labelY = 13;
+  const labelGap = 8;
+  const lessLabelWidth = 24;
+  const moreLabelWidth = 30;
+  const rightPadding = 14;
+  const cellY = -2;
+  const labelY = 7;
   const moreX = innerWidth - rightPadding - moreLabelWidth;
   const cellsWidth = cellCount * cellSize + (cellCount - 1) * cellGap;
   const cellsX = moreX - labelGap - cellsWidth;
@@ -342,11 +342,13 @@ function buildSvg(contributionData, username) {
       .scanner-stop { stop-color: #39d353; }
       .axis-label, .month-total, .legend-label {
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+      .axis-label, .month-total {
         font-size: 9px;
       }
       .axis-label { fill: #8b949e; }
       .month-total { fill: #c9d1d9; font-weight: 600; }
-      .legend-label { fill: #8b949e; }
+      .legend-label { fill: #8b949e; font-size: 11px; }
       .legend-cell { stroke-width: 0.5; }
       .legend-empty { fill: #161b22; stroke: #234c35; }
       .totals-divider { stroke: #234c35; stroke-width: 0.5; }
