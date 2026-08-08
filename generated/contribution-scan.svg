@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="790" height="210" viewBox="0 0 790 210" role="img" aria-labelledby="title description">
   <title id="title">SoCool-Theo's animated contribution scan</title>
-  <desc id="description">A glowing vertical line moves from left to right and reveals 158 contributions from SoCool-Theo's latest GitHub contribution calendar.</desc>
+  <desc id="description">A glowing vertical line moves from left to right and reveals 168 contributions from SoCool-Theo's latest GitHub contribution calendar.</desc>
 
   <defs>
     <style>
@@ -491,8 +491,8 @@
   </g>
 
   <g id="revealed-contributions" clip-path="url(#reveal-clip)" shape-rendering="geometricPrecision">
-      <rect class="level-2" x="371" y="47" width="10" height="10" rx="2"><title>2026-01-26: 3 contributions</title></rect>
-      <rect class="level-3" x="371" y="99" width="10" height="10" rx="2"><title>2026-01-30: 6 contributions</title></rect>
+      <rect class="level-1" x="371" y="47" width="10" height="10" rx="2"><title>2026-01-26: 3 contributions</title></rect>
+      <rect class="level-2" x="371" y="99" width="10" height="10" rx="2"><title>2026-01-30: 6 contributions</title></rect>
       <rect class="level-1" x="371" y="112" width="10" height="10" rx="2"><title>2026-01-31: 1 contribution</title></rect>
       <rect class="level-1" x="384" y="34" width="10" height="10" rx="2"><title>2026-02-01: 2 contributions</title></rect>
       <rect class="level-1" x="384" y="47" width="10" height="10" rx="2"><title>2026-02-02: 2 contributions</title></rect>
@@ -521,21 +521,23 @@
       <rect class="level-1" x="618" y="112" width="10" height="10" rx="2"><title>2026-06-13: 2 contributions</title></rect>
       <rect class="level-1" x="644" y="47" width="10" height="10" rx="2"><title>2026-06-22: 1 contribution</title></rect>
       <rect class="level-3" x="670" y="60" width="10" height="10" rx="2"><title>2026-07-07: 8 contributions</title></rect>
-      <rect class="level-4" x="670" y="99" width="10" height="10" rx="2"><title>2026-07-10: 10 contributions</title></rect>
-      <rect class="level-2" x="670" y="112" width="10" height="10" rx="2"><title>2026-07-11: 3 contributions</title></rect>
+      <rect class="level-3" x="670" y="99" width="10" height="10" rx="2"><title>2026-07-10: 10 contributions</title></rect>
+      <rect class="level-1" x="670" y="112" width="10" height="10" rx="2"><title>2026-07-11: 3 contributions</title></rect>
       <rect class="level-2" x="683" y="34" width="10" height="10" rx="2"><title>2026-07-12: 5 contributions</title></rect>
       <rect class="level-1" x="683" y="60" width="10" height="10" rx="2"><title>2026-07-14: 2 contributions</title></rect>
       <rect class="level-3" x="683" y="73" width="10" height="10" rx="2"><title>2026-07-15: 8 contributions</title></rect>
       <rect class="level-1" x="683" y="112" width="10" height="10" rx="2"><title>2026-07-18: 2 contributions</title></rect>
-      <rect class="level-3" x="696" y="86" width="10" height="10" rx="2"><title>2026-07-23: 6 contributions</title></rect>
-      <rect class="level-3" x="696" y="99" width="10" height="10" rx="2"><title>2026-07-24: 6 contributions</title></rect>
+      <rect class="level-2" x="696" y="86" width="10" height="10" rx="2"><title>2026-07-23: 6 contributions</title></rect>
+      <rect class="level-2" x="696" y="99" width="10" height="10" rx="2"><title>2026-07-24: 6 contributions</title></rect>
       <rect class="level-2" x="709" y="34" width="10" height="10" rx="2"><title>2026-07-26: 5 contributions</title></rect>
       <rect class="level-1" x="709" y="60" width="10" height="10" rx="2"><title>2026-07-28: 2 contributions</title></rect>
-      <rect class="level-2" x="709" y="73" width="10" height="10" rx="2"><title>2026-07-29: 3 contributions</title></rect>
+      <rect class="level-1" x="709" y="73" width="10" height="10" rx="2"><title>2026-07-29: 3 contributions</title></rect>
       <rect class="level-2" x="709" y="86" width="10" height="10" rx="2"><title>2026-07-30: 4 contributions</title></rect>
       <rect class="level-1" x="709" y="99" width="10" height="10" rx="2"><title>2026-07-31: 1 contribution</title></rect>
-      <rect class="level-3" x="709" y="112" width="10" height="10" rx="2"><title>2026-08-01: 6 contributions</title></rect>
-      <rect class="level-4" x="722" y="99" width="10" height="10" rx="2"><title>2026-08-07: 11 contributions</title></rect>
+      <rect class="level-2" x="709" y="112" width="10" height="10" rx="2"><title>2026-08-01: 6 contributions</title></rect>
+      <rect class="level-1" x="722" y="86" width="10" height="10" rx="2"><title>2026-08-06: 1 contribution</title></rect>
+      <rect class="level-4" x="722" y="99" width="10" height="10" rx="2"><title>2026-08-07: 14 contributions</title></rect>
+      <rect class="level-2" x="722" y="112" width="10" height="10" rx="2"><title>2026-08-08: 6 contributions</title></rect>
     <animate
       attributeName="opacity"
       values="1;1;1;0"
@@ -574,7 +576,7 @@
     <text class="axis-label" x="657" y="26">Jul<title>Jul 2026</title></text>
     <text class="month-total" x="688" y="149" text-anchor="middle">65<title>Jul 2026: 65 contributions</title></text>
     <text class="axis-label" x="709" y="26">Aug<title>Aug 2026</title></text>
-    <text class="month-total" x="720.5" y="149" text-anchor="middle">17<title>Aug 2026: 17 contributions</title></text>
+    <text class="month-total" x="720.5" y="149" text-anchor="middle">27<title>Aug 2026: 27 contributions</title></text>
     <line class="totals-divider" x1="46" y1="132" x2="732" y2="132" />
     <text class="axis-label" x="38" y="149" text-anchor="end">Total</text>
     <animate
