@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="790" height="210" viewBox="0 0 790 210" role="img" aria-labelledby="title description">
   <title id="title">SoCool-Theo's animated contribution scan</title>
-  <desc id="description">A glowing vertical line moves from left to right and reveals 248 contributions from SoCool-Theo's latest GitHub contribution calendar.</desc>
+  <desc id="description">A glowing vertical line moves from left to right and reveals 252 contributions from SoCool-Theo's latest GitHub contribution calendar.</desc>
 
   <defs>
     <style>
@@ -545,6 +545,7 @@
       <rect class="level-1" x="709" y="86" width="10" height="10" rx="2"><title>2026-08-13: 2 contributions</title></rect>
       <rect class="level-1" x="709" y="112" width="10" height="10" rx="2"><title>2026-08-15: 2 contributions</title></rect>
       <rect class="level-1" x="722" y="47" width="10" height="10" rx="2"><title>2026-08-17: 3 contributions</title></rect>
+      <rect class="level-1" x="722" y="60" width="10" height="10" rx="2"><title>2026-08-18: 4 contributions</title></rect>
     <animate
       attributeName="opacity"
       values="1;1;1;0"
@@ -583,7 +584,7 @@
     <text class="axis-label" x="631" y="26">Jul<title>Jul 2026</title></text>
     <text class="month-total" x="662" y="149" text-anchor="middle">65<title>Jul 2026: 65 contributions</title></text>
     <text class="axis-label" x="683" y="26">Aug<title>Aug 2026</title></text>
-    <text class="month-total" x="707.5" y="149" text-anchor="middle">107<title>Aug 2026: 107 contributions</title></text>
+    <text class="month-total" x="707.5" y="149" text-anchor="middle">111<title>Aug 2026: 111 contributions</title></text>
     <line class="totals-divider" x1="46" y1="132" x2="732" y2="132" />
     <text class="axis-label" x="38" y="149" text-anchor="end">Total</text>
     <animate
